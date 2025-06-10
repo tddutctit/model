@@ -44,3 +44,7 @@ if __name__ == "__main__":
 
     df = pd.DataFrame(examples)
     print(df)
+    print(" Generate excel file...")
+    df.to_excel("npu_estimation_output.xlsx", index=False)
+    print(" Done.")
+
