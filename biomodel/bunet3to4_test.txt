@@ -1,0 +1,188 @@
+=== Model Meta ===
+{
+  "ir_version": 6,
+  "producer_name": "pytorch",
+  "producer_version": "2.1.0",
+  "domain": "",
+  "model_version": 0,
+  "opsets": [
+    {
+      "domain": "ai.onnx",
+      "version": 11
+    }
+  ]
+}
+
+=== Inputs ===
+[0] input.1                                  shape=[1, 3, 1824, 1824] dtype=FLOAT
+
+=== Outputs ===
+[0] 61                                       shape=[1, 4, 3648, 3648] dtype=FLOAT
+
+=== Parameters (Initializers) ===
+Total parameters: 20,296
+- unet.0.decoders.0.0.weight               dims=[16, 32, 3, 3]       dtype=float32  count=4,608
+- unet.0.encoders.0.2.weight               dims=[16, 16, 3, 3]       dtype=float32  count=2,304
+- unet.0.encoders.1.0.weight               dims=[16, 16, 3, 3]       dtype=float32  count=2,304
+- unet.0.encoders.1.2.weight               dims=[16, 16, 3, 3]       dtype=float32  count=2,304
+- unet.0.decoders.0.2.weight               dims=[16, 16, 3, 3]       dtype=float32  count=2,304
+- unet.0.bottleneck.0.weight               dims=[16, 16, 3, 3]       dtype=float32  count=2,304
+- unet.0.bottleneck.2.weight               dims=[16, 16, 3, 3]       dtype=float32  count=2,304
+- unet.0.decoders.1.0.weight               dims=[4, 32, 3, 3]        dtype=float32  count=1,152
+- unet.0.encoders.0.0.weight               dims=[16, 3, 3, 3]        dtype=float32  count=432
+- unet.0.decoders.2.0.weight               dims=[4, 4, 3, 3]         dtype=float32  count=144
+- unet.0.encoders.0.0.bias                 dims=[16]                 dtype=float32  count=16
+- unet.0.encoders.0.2.bias                 dims=[16]                 dtype=float32  count=16
+- unet.0.encoders.1.0.bias                 dims=[16]                 dtype=float32  count=16
+- unet.0.encoders.1.2.bias                 dims=[16]                 dtype=float32  count=16
+- unet.0.decoders.0.0.bias                 dims=[16]                 dtype=float32  count=16
+- unet.0.decoders.0.2.bias                 dims=[16]                 dtype=float32  count=16
+- unet.0.bottleneck.0.bias                 dims=[16]                 dtype=float32  count=16
+- unet.0.bottleneck.2.bias                 dims=[16]                 dtype=float32  count=16
+- unet.0.decoders.1.0.bias                 dims=[4]                  dtype=float32  count=4
+- unet.0.decoders.2.0.bias                 dims=[4]                  dtype=float32  count=4
+
+=== Node Type Histogram ===
+Conv                 : 10
+Relu                 : 10
+Constant             : 6
+Resize               : 3
+Concat               : 2
+MaxPool              : 2
+
+=== Nodes (topological order) ===
+[0000] Constant     name='/upsample/Constant'
+       inputs : []  shapes=[]
+       outputs: ['/upsample/Constant_output_0'] shapes=[['?']]
+       attrs  : value=[]
+[0001] Constant     name='/upsample/Constant_1'
+       inputs : []  shapes=[]
+       outputs: ['/upsample/Constant_1_output_0'] shapes=[['?']]
+       attrs  : value=[]
+[0002] Resize       name='/upsample/Resize'
+       inputs : ['input.1', '/upsample/Constant_1_output_0', '/upsample/Constant_output_0']  shapes=[[1, 3, 1824, 1824], ['?'], ['?']]
+       outputs: ['/upsample/Resize_output_0'] shapes=[['?']]
+       attrs  : coordinate_transformation_mode=[], cubic_coeff_a=[], mode=[], nearest_mode=[]
+[0003] Conv         name='/unet.0/encoders.0/encoders.0.0/Conv'
+       inputs : ['/upsample/Resize_output_0', 'unet.0.encoders.0.0.weight', 'unet.0.encoders.0.0.bias']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/encoders.0/encoders.0.0/Conv_output_0'] shapes=[['?']]
+       attrs  : dilations=[], group=[], kernel_shape=[], pads=[], strides=[]
+[0004] Relu         name='/unet.0/encoders.0/encoders.0.1/Relu'
+       inputs : ['/unet.0/encoders.0/encoders.0.0/Conv_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/encoders.0/encoders.0.1/Relu_output_0'] shapes=[['?']]
+       attrs  : -
+[0005] Conv         name='/unet.0/encoders.0/encoders.0.2/Conv'
+       inputs : ['/unet.0/encoders.0/encoders.0.1/Relu_output_0', 'unet.0.encoders.0.2.weight', 'unet.0.encoders.0.2.bias']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/encoders.0/encoders.0.2/Conv_output_0'] shapes=[['?']]
+       attrs  : dilations=[], group=[], kernel_shape=[], pads=[], strides=[]
+[0006] Relu         name='/unet.0/encoders.0/encoders.0.3/Relu'
+       inputs : ['/unet.0/encoders.0/encoders.0.2/Conv_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/encoders.0/encoders.0.3/Relu_output_0'] shapes=[['?']]
+       attrs  : -
+[0007] MaxPool      name='/unet.0/MaxPool'
+       inputs : ['/unet.0/encoders.0/encoders.0.3/Relu_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/MaxPool_output_0'] shapes=[['?']]
+       attrs  : ceil_mode=[], kernel_shape=[], pads=[], strides=[]
+[0008] Conv         name='/unet.0/encoders.1/encoders.1.0/Conv'
+       inputs : ['/unet.0/MaxPool_output_0', 'unet.0.encoders.1.0.weight', 'unet.0.encoders.1.0.bias']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/encoders.1/encoders.1.0/Conv_output_0'] shapes=[['?']]
+       attrs  : dilations=[], group=[], kernel_shape=[], pads=[], strides=[]
+[0009] Relu         name='/unet.0/encoders.1/encoders.1.1/Relu'
+       inputs : ['/unet.0/encoders.1/encoders.1.0/Conv_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/encoders.1/encoders.1.1/Relu_output_0'] shapes=[['?']]
+       attrs  : -
+[0010] Conv         name='/unet.0/encoders.1/encoders.1.2/Conv'
+       inputs : ['/unet.0/encoders.1/encoders.1.1/Relu_output_0', 'unet.0.encoders.1.2.weight', 'unet.0.encoders.1.2.bias']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/encoders.1/encoders.1.2/Conv_output_0'] shapes=[['?']]
+       attrs  : dilations=[], group=[], kernel_shape=[], pads=[], strides=[]
+[0011] Relu         name='/unet.0/encoders.1/encoders.1.3/Relu'
+       inputs : ['/unet.0/encoders.1/encoders.1.2/Conv_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/encoders.1/encoders.1.3/Relu_output_0'] shapes=[['?']]
+       attrs  : -
+[0012] MaxPool      name='/unet.0/MaxPool_1'
+       inputs : ['/unet.0/encoders.1/encoders.1.3/Relu_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/MaxPool_1_output_0'] shapes=[['?']]
+       attrs  : ceil_mode=[], kernel_shape=[], pads=[], strides=[]
+[0013] Conv         name='/unet.0/bottleneck/bottleneck.0/Conv'
+       inputs : ['/unet.0/MaxPool_1_output_0', 'unet.0.bottleneck.0.weight', 'unet.0.bottleneck.0.bias']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/bottleneck/bottleneck.0/Conv_output_0'] shapes=[['?']]
+       attrs  : dilations=[], group=[], kernel_shape=[], pads=[], strides=[]
+[0014] Relu         name='/unet.0/bottleneck/bottleneck.1/Relu'
+       inputs : ['/unet.0/bottleneck/bottleneck.0/Conv_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/bottleneck/bottleneck.1/Relu_output_0'] shapes=[['?']]
+       attrs  : -
+[0015] Conv         name='/unet.0/bottleneck/bottleneck.2/Conv'
+       inputs : ['/unet.0/bottleneck/bottleneck.1/Relu_output_0', 'unet.0.bottleneck.2.weight', 'unet.0.bottleneck.2.bias']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/bottleneck/bottleneck.2/Conv_output_0'] shapes=[['?']]
+       attrs  : dilations=[], group=[], kernel_shape=[], pads=[], strides=[]
+[0016] Relu         name='/unet.0/bottleneck/bottleneck.3/Relu'
+       inputs : ['/unet.0/bottleneck/bottleneck.2/Conv_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/bottleneck/bottleneck.3/Relu_output_0'] shapes=[['?']]
+       attrs  : -
+[0017] Constant     name='/unet.0/upconvs.0/Constant'
+       inputs : []  shapes=[]
+       outputs: ['/unet.0/upconvs.0/Constant_output_0'] shapes=[['?']]
+       attrs  : value=[]
+[0018] Constant     name='/unet.0/upconvs.0/Constant_1'
+       inputs : []  shapes=[]
+       outputs: ['/unet.0/upconvs.0/Constant_1_output_0'] shapes=[['?']]
+       attrs  : value=[]
+[0019] Resize       name='/unet.0/upconvs.0/Resize'
+       inputs : ['/unet.0/bottleneck/bottleneck.3/Relu_output_0', '/unet.0/upconvs.0/Constant_1_output_0', '/unet.0/upconvs.0/Constant_output_0']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/upconvs.0/Resize_output_0'] shapes=[['?']]
+       attrs  : coordinate_transformation_mode=[], cubic_coeff_a=[], mode=[], nearest_mode=[]
+[0020] Concat       name='/unet.0/Concat'
+       inputs : ['/unet.0/upconvs.0/Resize_output_0', '/unet.0/encoders.1/encoders.1.3/Relu_output_0']  shapes=[['?'], ['?']]
+       outputs: ['/unet.0/Concat_output_0'] shapes=[['?']]
+       attrs  : axis=[]
+[0021] Conv         name='/unet.0/decoders.0/decoders.0.0/Conv'
+       inputs : ['/unet.0/Concat_output_0', 'unet.0.decoders.0.0.weight', 'unet.0.decoders.0.0.bias']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/decoders.0/decoders.0.0/Conv_output_0'] shapes=[['?']]
+       attrs  : dilations=[], group=[], kernel_shape=[], pads=[], strides=[]
+[0022] Relu         name='/unet.0/decoders.0/decoders.0.1/Relu'
+       inputs : ['/unet.0/decoders.0/decoders.0.0/Conv_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/decoders.0/decoders.0.1/Relu_output_0'] shapes=[['?']]
+       attrs  : -
+[0023] Conv         name='/unet.0/decoders.0/decoders.0.2/Conv'
+       inputs : ['/unet.0/decoders.0/decoders.0.1/Relu_output_0', 'unet.0.decoders.0.2.weight', 'unet.0.decoders.0.2.bias']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/decoders.0/decoders.0.2/Conv_output_0'] shapes=[['?']]
+       attrs  : dilations=[], group=[], kernel_shape=[], pads=[], strides=[]
+[0024] Relu         name='/unet.0/decoders.0/decoders.0.3/Relu'
+       inputs : ['/unet.0/decoders.0/decoders.0.2/Conv_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/decoders.0/decoders.0.3/Relu_output_0'] shapes=[['?']]
+       attrs  : -
+[0025] Constant     name='/unet.0/upconvs.1/Constant'
+       inputs : []  shapes=[]
+       outputs: ['/unet.0/upconvs.1/Constant_output_0'] shapes=[['?']]
+       attrs  : value=[]
+[0026] Constant     name='/unet.0/upconvs.1/Constant_1'
+       inputs : []  shapes=[]
+       outputs: ['/unet.0/upconvs.1/Constant_1_output_0'] shapes=[['?']]
+       attrs  : value=[]
+[0027] Resize       name='/unet.0/upconvs.1/Resize'
+       inputs : ['/unet.0/decoders.0/decoders.0.3/Relu_output_0', '/unet.0/upconvs.1/Constant_1_output_0', '/unet.0/upconvs.1/Constant_output_0']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/upconvs.1/Resize_output_0'] shapes=[['?']]
+       attrs  : coordinate_transformation_mode=[], cubic_coeff_a=[], mode=[], nearest_mode=[]
+[0028] Concat       name='/unet.0/Concat_1'
+       inputs : ['/unet.0/upconvs.1/Resize_output_0', '/unet.0/encoders.0/encoders.0.3/Relu_output_0']  shapes=[['?'], ['?']]
+       outputs: ['/unet.0/Concat_1_output_0'] shapes=[['?']]
+       attrs  : axis=[]
+[0029] Conv         name='/unet.0/decoders.1/decoders.1.0/Conv'
+       inputs : ['/unet.0/Concat_1_output_0', 'unet.0.decoders.1.0.weight', 'unet.0.decoders.1.0.bias']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/decoders.1/decoders.1.0/Conv_output_0'] shapes=[['?']]
+       attrs  : dilations=[], group=[], kernel_shape=[], pads=[], strides=[]
+[0030] Relu         name='/unet.0/decoders.1/decoders.1.1/Relu'
+       inputs : ['/unet.0/decoders.1/decoders.1.0/Conv_output_0']  shapes=[['?']]
+       outputs: ['/unet.0/decoders.1/decoders.1.1/Relu_output_0'] shapes=[['?']]
+       attrs  : -
+[0031] Conv         name='/unet.0/decoders.2/decoders.2.0/Conv'
+       inputs : ['/unet.0/decoders.1/decoders.1.1/Relu_output_0', 'unet.0.decoders.2.0.weight', 'unet.0.decoders.2.0.bias']  shapes=[['?'], ['?'], ['?']]
+       outputs: ['/unet.0/decoders.2/decoders.2.0/Conv_output_0'] shapes=[['?']]
+       attrs  : dilations=[], group=[], kernel_shape=[], pads=[], strides=[]
+[0032] Relu         name='/unet.0/decoders.2/decoders.2.1/Relu'
+       inputs : ['/unet.0/decoders.2/decoders.2.0/Conv_output_0']  shapes=[['?']]
+       outputs: ['61'] shapes=[[1, 4, 3648, 3648]]
+       attrs  : -
+
+[OK] onnx.checker.check_model passed.
+[OK] onnxruntime loaded the model.
