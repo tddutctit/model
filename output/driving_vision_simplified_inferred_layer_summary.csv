@@ -1,0 +1,17 @@
+LayerType,Count
+Cast,2
+Concat,2
+Conv,60
+Mul,128
+Add,61
+Tanh,19
+ReduceMean,1
+Relu,30
+Sigmoid,1
+GlobalAveragePool,1
+Flatten,1
+Gemm,36
+ReduceSum,1
+Sqrt,1
+Clip,1
+Div,1

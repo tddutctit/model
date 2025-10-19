@@ -1,0 +1,64 @@
+{
+  "model_path": "testmodel/test_fuse_unet_quantized_u8in_i8out.onnx",
+  "inputs": [
+    {
+      "name": "input",
+      "shape": [
+        1,
+        9,
+        1600,
+        1600
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output_QuantizeLinear_Output",
+      "shape": [
+        1,
+        4,
+        3200,
+        3200
+      ]
+    },
+    {
+      "name": "output_scale",
+      "shape": []
+    },
+    {
+      "name": "output_zero_point",
+      "shape": []
+    }
+  ],
+  "layer_type_summary": {
+    "DequantizeLinear": 35,
+    "Constant": 14,
+    "QuantizeLinear": 35,
+    "Shape": 3,
+    "Gather": 6,
+    "Unsqueeze": 3,
+    "Concat": 4,
+    "Reshape": 1,
+    "Resize": 3,
+    "Conv": 19,
+    "Relu": 18,
+    "MaxPool": 6,
+    "ConvTranspose": 2
+  },
+  "parameter_summary": {
+    "total_params": 156606,
+    "top_parameters": {
+      "encoder.blocks.0.0.weight": 864,
+      "encoder.blocks.0.4.weight": 9216,
+      "encoder.blocks.1.0.weight": 9216,
+      "encoder.blocks.1.4.weight": 9216,
+      "decoder.upconvs.0.weight": 12288,
+      "decoder.upconvs.0.bias": 32,
+      "decoder.upconvs.1.weight": 4096,
+      "decoder.upconvs.1.bias": 32,
+      "decoder.blocks.0.0.weight": 36864,
+      "decoder.blocks.0.4.weight": 9216
+    }
+  },
+  "tops_estimate": 0.0
+}

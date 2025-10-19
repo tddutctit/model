@@ -1,0 +1,14 @@
+LayerType,Count
+DequantizeLinear,35
+Constant,14
+QuantizeLinear,35
+Shape,3
+Gather,6
+Unsqueeze,3
+Concat,4
+Reshape,1
+Resize,3
+Conv,19
+Relu,18
+MaxPool,6
+ConvTranspose,2
