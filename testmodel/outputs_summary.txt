@@ -1,0 +1,503 @@
+============================================================
+ONNX Model: testmodel/20250922_fuse_unet_quantized_u8in_i8out.onnx
+============================================================
+
+[Inputs]
+- input: [1, 9, 1600, 1600]
+
+[Outputs]
+- output_QuantizeLinear_Output: [1, 4, 3200, 3200]
+- output_scale: []
+- output_zero_point: []
+
+[Layers]
+001. DequantizeLinear | Name: input_ExternalInput_DQ
+002. Constant | Name: /Constant
+    Attr: value = <no value field>
+003. Constant | Name: /Constant_1
+    Attr: value = <no value field>
+004. Constant | Name: /Constant_2
+    Attr: value = <no value field>
+005. Constant | Name: /Constant_3
+    Attr: value = <no value field>
+006. Constant | Name: /Constant_4
+    Attr: value = <no value field>
+007. Constant | Name: Constant_25
+    Attr: value = <no value field>
+008. Constant | Name: /Constant_5
+    Attr: value = <no value field>
+009. Constant | Name: /Constant_6
+    Attr: value = <no value field>
+010. Constant | Name: Constant_29
+    Attr: value = <no value field>
+011. Constant | Name: Constant_31
+    Attr: value = <no value field>
+012. Constant | Name: /Constant_7
+    Attr: value = <no value field>
+013. Constant | Name: /upsample/Constant
+    Attr: value = <no value field>
+014. Constant | Name: /upsample_1/Constant
+    Attr: value = <no value field>
+015. Constant | Name: /upsample_2/Constant
+    Attr: value = <no value field>
+016. QuantizeLinear | Name: decoder.blocks.0.0.weight_QuantizeLinear
+    Attr: axis = <no value field>
+017. QuantizeLinear | Name: decoder.blocks.0.4.weight_QuantizeLinear
+    Attr: axis = <no value field>
+018. QuantizeLinear | Name: decoder.blocks.1.0.weight_QuantizeLinear
+    Attr: axis = <no value field>
+019. QuantizeLinear | Name: decoder.blocks.1.4.weight_QuantizeLinear
+    Attr: axis = <no value field>
+020. QuantizeLinear | Name: decoder.upconvs.0.weight_QuantizeLinear
+    Attr: axis = <no value field>
+021. QuantizeLinear | Name: decoder.upconvs.1.weight_QuantizeLinear
+    Attr: axis = <no value field>
+022. QuantizeLinear | Name: encoder.blocks.0.0.weight_QuantizeLinear
+    Attr: axis = <no value field>
+023. QuantizeLinear | Name: encoder.blocks.0.4.weight_QuantizeLinear
+    Attr: axis = <no value field>
+024. QuantizeLinear | Name: encoder.blocks.1.0.weight_QuantizeLinear
+    Attr: axis = <no value field>
+025. QuantizeLinear | Name: encoder.blocks.1.4.weight_QuantizeLinear
+    Attr: axis = <no value field>
+026. QuantizeLinear | Name: final_conv.0.weight_QuantizeLinear
+    Attr: axis = <no value field>
+027. QuantizeLinear | Name: final_conv.4.weight_QuantizeLinear
+    Attr: axis = <no value field>
+028. QuantizeLinear | Name: final_conv.8.weight_QuantizeLinear
+    Attr: axis = <no value field>
+029. Shape | Name: /Shape
+030. Shape | Name: /Shape_1
+031. Shape | Name: /Shape_2
+032. DequantizeLinear | Name: decoder.blocks.0.0.weight_DequantizeLinear
+    Attr: axis = <no value field>
+033. DequantizeLinear | Name: decoder.blocks.0.4.weight_DequantizeLinear
+    Attr: axis = <no value field>
+034. DequantizeLinear | Name: decoder.blocks.1.0.weight_DequantizeLinear
+    Attr: axis = <no value field>
+035. DequantizeLinear | Name: decoder.blocks.1.4.weight_DequantizeLinear
+    Attr: axis = <no value field>
+036. DequantizeLinear | Name: decoder.upconvs.0.weight_DequantizeLinear
+    Attr: axis = <no value field>
+037. DequantizeLinear | Name: decoder.upconvs.1.weight_DequantizeLinear
+    Attr: axis = <no value field>
+038. DequantizeLinear | Name: encoder.blocks.0.0.weight_DequantizeLinear
+    Attr: axis = <no value field>
+039. DequantizeLinear | Name: encoder.blocks.0.4.weight_DequantizeLinear
+    Attr: axis = <no value field>
+040. DequantizeLinear | Name: encoder.blocks.1.0.weight_DequantizeLinear
+    Attr: axis = <no value field>
+041. DequantizeLinear | Name: encoder.blocks.1.4.weight_DequantizeLinear
+    Attr: axis = <no value field>
+042. DequantizeLinear | Name: final_conv.0.weight_DequantizeLinear
+    Attr: axis = <no value field>
+043. DequantizeLinear | Name: final_conv.4.weight_DequantizeLinear
+    Attr: axis = <no value field>
+044. DequantizeLinear | Name: final_conv.8.weight_DequantizeLinear
+    Attr: axis = <no value field>
+045. Gather | Name: /Gather
+    Attr: axis = <no value field>
+046. Gather | Name: /Gather_1
+    Attr: axis = <no value field>
+047. Gather | Name: /Gather_2
+    Attr: axis = <no value field>
+048. Unsqueeze | Name: /Unsqueeze
+049. Unsqueeze | Name: /Unsqueeze_1
+050. Unsqueeze | Name: /Unsqueeze_2
+051. Concat | Name: /Concat
+    Attr: axis = <no value field>
+052. Reshape | Name: /Reshape
+053. Gather | Name: /Gather_3
+    Attr: axis = <no value field>
+054. Gather | Name: /Gather_4
+    Attr: axis = <no value field>
+055. Gather | Name: /Gather_5
+    Attr: axis = <no value field>
+056. Resize | Name: /upsample/Resize
+    Attr: coordinate_transformation_mode = <no value field>
+    Attr: cubic_coeff_a = <no value field>
+    Attr: mode = <no value field>
+    Attr: nearest_mode = <no value field>
+057. Resize | Name: /upsample_1/Resize
+    Attr: coordinate_transformation_mode = <no value field>
+    Attr: cubic_coeff_a = <no value field>
+    Attr: mode = <no value field>
+    Attr: nearest_mode = <no value field>
+058. Resize | Name: /upsample_2/Resize
+    Attr: coordinate_transformation_mode = <no value field>
+    Attr: cubic_coeff_a = <no value field>
+    Attr: mode = <no value field>
+    Attr: nearest_mode = <no value field>
+059. QuantizeLinear | Name: /upsample/Resize_output_0_QuantizeLinear
+060. QuantizeLinear | Name: /upsample_1/Resize_output_0_QuantizeLinear
+061. QuantizeLinear | Name: /upsample_2/Resize_output_0_QuantizeLinear
+062. DequantizeLinear | Name: /upsample/Resize_output_0_DequantizeLinear
+063. DequantizeLinear | Name: /upsample_1/Resize_output_0_DequantizeLinear
+064. DequantizeLinear | Name: /upsample_2/Resize_output_0_DequantizeLinear
+065. Conv | Name: /encoder/blocks.0/blocks.0.0/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+066. Conv | Name: /encoder/blocks.0/blocks.0.0_1/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+067. Conv | Name: /encoder/blocks.0/blocks.0.0_2/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+068. Relu | Name: /encoder/blocks.0/blocks.0.2/Relu
+069. Relu | Name: /encoder/blocks.0/blocks.0.2_1/Relu
+070. Relu | Name: /encoder/blocks.0/blocks.0.2_2/Relu
+071. QuantizeLinear | Name: /encoder/blocks.0/blocks.0.2/Relu_output_0_QuantizeLinear
+072. QuantizeLinear | Name: /encoder/blocks.0/blocks.0.2_1/Relu_output_0_QuantizeLinear
+073. QuantizeLinear | Name: /encoder/blocks.0/blocks.0.2_2/Relu_output_0_QuantizeLinear
+074. DequantizeLinear | Name: /encoder/blocks.0/blocks.0.2/Relu_output_0_DequantizeLinear
+075. DequantizeLinear | Name: /encoder/blocks.0/blocks.0.2_1/Relu_output_0_DequantizeLinear
+076. DequantizeLinear | Name: /encoder/blocks.0/blocks.0.2_2/Relu_output_0_DequantizeLinear
+077. Conv | Name: /encoder/blocks.0/blocks.0.4/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+078. Conv | Name: /encoder/blocks.0/blocks.0.4_1/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+079. Conv | Name: /encoder/blocks.0/blocks.0.4_2/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+080. Relu | Name: /encoder/blocks.0/blocks.0.6/Relu
+081. Relu | Name: /encoder/blocks.0/blocks.0.6_1/Relu
+082. Relu | Name: /encoder/blocks.0/blocks.0.6_2/Relu
+083. MaxPool | Name: /encoder/downs.0/MaxPool
+    Attr: ceil_mode = <no value field>
+    Attr: dilations = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+084. MaxPool | Name: /encoder/downs.0_1/MaxPool
+    Attr: ceil_mode = <no value field>
+    Attr: dilations = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+085. MaxPool | Name: /encoder/downs.0_2/MaxPool
+    Attr: ceil_mode = <no value field>
+    Attr: dilations = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+086. QuantizeLinear | Name: /encoder/downs.0/MaxPool_output_0_QuantizeLinear
+087. QuantizeLinear | Name: /encoder/downs.0_1/MaxPool_output_0_QuantizeLinear
+088. QuantizeLinear | Name: /encoder/downs.0_2/MaxPool_output_0_QuantizeLinear
+089. DequantizeLinear | Name: /encoder/downs.0/MaxPool_output_0_DequantizeLinear
+090. DequantizeLinear | Name: /encoder/downs.0_1/MaxPool_output_0_DequantizeLinear
+091. DequantizeLinear | Name: /encoder/downs.0_2/MaxPool_output_0_DequantizeLinear
+092. Conv | Name: /encoder/blocks.1/blocks.1.0/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+093. Conv | Name: /encoder/blocks.1/blocks.1.0_1/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+094. Conv | Name: /encoder/blocks.1/blocks.1.0_2/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+095. Relu | Name: /encoder/blocks.1/blocks.1.2/Relu
+096. Relu | Name: /encoder/blocks.1/blocks.1.2_1/Relu
+097. Relu | Name: /encoder/blocks.1/blocks.1.2_2/Relu
+098. QuantizeLinear | Name: /encoder/blocks.1/blocks.1.2/Relu_output_0_QuantizeLinear
+099. QuantizeLinear | Name: /encoder/blocks.1/blocks.1.2_1/Relu_output_0_QuantizeLinear
+100. QuantizeLinear | Name: /encoder/blocks.1/blocks.1.2_2/Relu_output_0_QuantizeLinear
+101. DequantizeLinear | Name: /encoder/blocks.1/blocks.1.2/Relu_output_0_DequantizeLinear
+102. DequantizeLinear | Name: /encoder/blocks.1/blocks.1.2_1/Relu_output_0_DequantizeLinear
+103. DequantizeLinear | Name: /encoder/blocks.1/blocks.1.2_2/Relu_output_0_DequantizeLinear
+104. Conv | Name: /encoder/blocks.1/blocks.1.4/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+105. Conv | Name: /encoder/blocks.1/blocks.1.4_1/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+106. Conv | Name: /encoder/blocks.1/blocks.1.4_2/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+107. Relu | Name: /encoder/blocks.1/blocks.1.6/Relu
+108. Relu | Name: /encoder/blocks.1/blocks.1.6_1/Relu
+109. Relu | Name: /encoder/blocks.1/blocks.1.6_2/Relu
+110. MaxPool | Name: /encoder/downs.1/MaxPool
+    Attr: ceil_mode = <no value field>
+    Attr: dilations = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+111. MaxPool | Name: /encoder/downs.1_1/MaxPool
+    Attr: ceil_mode = <no value field>
+    Attr: dilations = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+112. MaxPool | Name: /encoder/downs.1_2/MaxPool
+    Attr: ceil_mode = <no value field>
+    Attr: dilations = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+113. Concat | Name: /Concat_1
+    Attr: axis = <no value field>
+114. QuantizeLinear | Name: /Concat_1_output_0_QuantizeLinear
+115. DequantizeLinear | Name: /Concat_1_output_0_DequantizeLinear
+116. ConvTranspose | Name: /decoder/upconvs.0/ConvTranspose
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+117. Concat | Name: /decoder/Concat
+    Attr: axis = <no value field>
+118. QuantizeLinear | Name: /decoder/Concat_output_0_QuantizeLinear
+119. DequantizeLinear | Name: /decoder/Concat_output_0_DequantizeLinear
+120. Conv | Name: /decoder/blocks.0/blocks.0.0/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+121. Relu | Name: /decoder/blocks.0/blocks.0.2/Relu
+122. QuantizeLinear | Name: /decoder/blocks.0/blocks.0.2/Relu_output_0_QuantizeLinear
+123. DequantizeLinear | Name: /decoder/blocks.0/blocks.0.2/Relu_output_0_DequantizeLinear
+124. Conv | Name: /decoder/blocks.0/blocks.0.4/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+125. Relu | Name: /decoder/blocks.0/blocks.0.6/Relu
+126. QuantizeLinear | Name: /decoder/blocks.0/blocks.0.6/Relu_output_0_QuantizeLinear
+127. DequantizeLinear | Name: /decoder/blocks.0/blocks.0.6/Relu_output_0_DequantizeLinear
+128. ConvTranspose | Name: /decoder/upconvs.1/ConvTranspose
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+129. Concat | Name: /decoder/Concat_1
+    Attr: axis = <no value field>
+130. QuantizeLinear | Name: /decoder/Concat_1_output_0_QuantizeLinear
+131. DequantizeLinear | Name: /decoder/Concat_1_output_0_DequantizeLinear
+132. Conv | Name: /decoder/blocks.1/blocks.1.0/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+133. Relu | Name: /decoder/blocks.1/blocks.1.2/Relu
+134. QuantizeLinear | Name: /decoder/blocks.1/blocks.1.2/Relu_output_0_QuantizeLinear
+135. DequantizeLinear | Name: /decoder/blocks.1/blocks.1.2/Relu_output_0_DequantizeLinear
+136. Conv | Name: /decoder/blocks.1/blocks.1.4/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+137. Relu | Name: /decoder/blocks.1/blocks.1.6/Relu
+138. QuantizeLinear | Name: /decoder/blocks.1/blocks.1.6/Relu_output_0_QuantizeLinear
+139. DequantizeLinear | Name: /decoder/blocks.1/blocks.1.6/Relu_output_0_DequantizeLinear
+140. Conv | Name: /final_conv/final_conv.0/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+141. Relu | Name: /final_conv/final_conv.2/Relu
+142. QuantizeLinear | Name: /final_conv/final_conv.2/Relu_output_0_QuantizeLinear
+143. DequantizeLinear | Name: /final_conv/final_conv.2/Relu_output_0_DequantizeLinear
+144. Conv | Name: /final_conv/final_conv.4/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+145. Relu | Name: /final_conv/final_conv.6/Relu
+146. QuantizeLinear | Name: /final_conv/final_conv.6/Relu_output_0_QuantizeLinear
+147. DequantizeLinear | Name: /final_conv/final_conv.6/Relu_output_0_DequantizeLinear
+148. Conv | Name: /final_conv/final_conv.8/Conv
+    Attr: dilations = <no value field>
+    Attr: group = <no value field>
+    Attr: kernel_shape = <no value field>
+    Attr: pads = <no value field>
+    Attr: strides = <no value field>
+149. QuantizeLinear | Name: output_QuantizeLinear
+
+[Layer Type Summary]
+- DequantizeLinear: 35 layer(s)
+- Constant: 14 layer(s)
+- QuantizeLinear: 35 layer(s)
+- Shape: 3 layer(s)
+- Gather: 6 layer(s)
+- Unsqueeze: 3 layer(s)
+- Concat: 4 layer(s)
+- Reshape: 1 layer(s)
+- Resize: 3 layer(s)
+- Conv: 19 layer(s)
+- Relu: 18 layer(s)
+- MaxPool: 6 layer(s)
+- ConvTranspose: 2 layer(s)
+
+[Parameters]
+Total parameters: 156606
+- encoder.blocks.0.0.weight: 864 params
+- encoder.blocks.0.4.weight: 9216 params
+- encoder.blocks.1.0.weight: 9216 params
+- encoder.blocks.1.4.weight: 9216 params
+- decoder.upconvs.0.weight: 12288 params
+- decoder.upconvs.0.bias: 32 params
+- decoder.upconvs.1.weight: 4096 params
+- decoder.upconvs.1.bias: 32 params
+- decoder.blocks.0.0.weight: 36864 params
+- decoder.blocks.0.4.weight: 9216 params
+- decoder.blocks.1.0.weight: 36864 params
+- decoder.blocks.1.4.weight: 9216 params
+- final_conv.0.weight: 9216 params
+- final_conv.0.bias: 32 params
+- final_conv.4.weight: 9216 params
+- final_conv.4.bias: 32 params
+- final_conv.8.weight: 128 params
+- final_conv.8.bias: 4 params
+- /upsample/Resize_output_0_zero_point: 1 params
+- /upsample/Resize_output_0_scale: 1 params
+- /encoder/blocks.0/blocks.0.0/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.0/blocks.0.0/Conv_output_0_scale: 1 params
+- encoder.blocks.0.0.weight_zero_point: 32 params
+- encoder.blocks.0.0.weight_scale: 32 params
+- /encoder/blocks.0/blocks.0.2/Relu_output_0_zero_point: 1 params
+- /encoder/blocks.0/blocks.0.2/Relu_output_0_scale: 1 params
+- /encoder/blocks.0/blocks.0.4/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.0/blocks.0.4/Conv_output_0_scale: 1 params
+- encoder.blocks.0.4.weight_zero_point: 32 params
+- encoder.blocks.0.4.weight_scale: 32 params
+- /encoder/downs.0/MaxPool_output_0_zero_point: 1 params
+- /encoder/downs.0/MaxPool_output_0_scale: 1 params
+- /encoder/blocks.1/blocks.1.0/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.1/blocks.1.0/Conv_output_0_scale: 1 params
+- encoder.blocks.1.0.weight_zero_point: 32 params
+- encoder.blocks.1.0.weight_scale: 32 params
+- /encoder/blocks.1/blocks.1.2/Relu_output_0_zero_point: 1 params
+- /encoder/blocks.1/blocks.1.2/Relu_output_0_scale: 1 params
+- /encoder/blocks.1/blocks.1.4/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.1/blocks.1.4/Conv_output_0_scale: 1 params
+- encoder.blocks.1.4.weight_zero_point: 32 params
+- encoder.blocks.1.4.weight_scale: 32 params
+- /upsample_1/Resize_output_0_zero_point: 1 params
+- /upsample_1/Resize_output_0_scale: 1 params
+- /encoder/blocks.0/blocks.0.0_1/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.0/blocks.0.0_1/Conv_output_0_scale: 1 params
+- /encoder/blocks.0/blocks.0.2_1/Relu_output_0_zero_point: 1 params
+- /encoder/blocks.0/blocks.0.2_1/Relu_output_0_scale: 1 params
+- /encoder/blocks.0/blocks.0.4_1/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.0/blocks.0.4_1/Conv_output_0_scale: 1 params
+- /encoder/downs.0_1/MaxPool_output_0_zero_point: 1 params
+- /encoder/downs.0_1/MaxPool_output_0_scale: 1 params
+- /encoder/blocks.1/blocks.1.0_1/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.1/blocks.1.0_1/Conv_output_0_scale: 1 params
+- /encoder/blocks.1/blocks.1.2_1/Relu_output_0_zero_point: 1 params
+- /encoder/blocks.1/blocks.1.2_1/Relu_output_0_scale: 1 params
+- /encoder/blocks.1/blocks.1.4_1/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.1/blocks.1.4_1/Conv_output_0_scale: 1 params
+- /upsample_2/Resize_output_0_zero_point: 1 params
+- /upsample_2/Resize_output_0_scale: 1 params
+- /encoder/blocks.0/blocks.0.0_2/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.0/blocks.0.0_2/Conv_output_0_scale: 1 params
+- /encoder/blocks.0/blocks.0.2_2/Relu_output_0_zero_point: 1 params
+- /encoder/blocks.0/blocks.0.2_2/Relu_output_0_scale: 1 params
+- /encoder/blocks.0/blocks.0.4_2/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.0/blocks.0.4_2/Conv_output_0_scale: 1 params
+- /encoder/downs.0_2/MaxPool_output_0_zero_point: 1 params
+- /encoder/downs.0_2/MaxPool_output_0_scale: 1 params
+- /encoder/blocks.1/blocks.1.0_2/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.1/blocks.1.0_2/Conv_output_0_scale: 1 params
+- /encoder/blocks.1/blocks.1.2_2/Relu_output_0_zero_point: 1 params
+- /encoder/blocks.1/blocks.1.2_2/Relu_output_0_scale: 1 params
+- /encoder/blocks.1/blocks.1.4_2/Conv_output_0_zero_point: 1 params
+- /encoder/blocks.1/blocks.1.4_2/Conv_output_0_scale: 1 params
+- /Concat_1_output_0_zero_point: 1 params
+- /Concat_1_output_0_scale: 1 params
+- decoder.upconvs.0.weight_zero_point: 32 params
+- decoder.upconvs.0.weight_scale: 32 params
+- /decoder/Concat_output_0_zero_point: 1 params
+- /decoder/Concat_output_0_scale: 1 params
+- /decoder/blocks.0/blocks.0.0/Conv_output_0_zero_point: 1 params
+- /decoder/blocks.0/blocks.0.0/Conv_output_0_scale: 1 params
+- decoder.blocks.0.0.weight_zero_point: 32 params
+- decoder.blocks.0.0.weight_scale: 32 params
+- /decoder/blocks.0/blocks.0.2/Relu_output_0_zero_point: 1 params
+- /decoder/blocks.0/blocks.0.2/Relu_output_0_scale: 1 params
+- /decoder/blocks.0/blocks.0.4/Conv_output_0_zero_point: 1 params
+- /decoder/blocks.0/blocks.0.4/Conv_output_0_scale: 1 params
+- decoder.blocks.0.4.weight_zero_point: 32 params
+- decoder.blocks.0.4.weight_scale: 32 params
+- /decoder/blocks.0/blocks.0.6/Relu_output_0_zero_point: 1 params
+- /decoder/blocks.0/blocks.0.6/Relu_output_0_scale: 1 params
+- decoder.upconvs.1.weight_zero_point: 32 params
+- decoder.upconvs.1.weight_scale: 32 params
+- /decoder/Concat_1_output_0_zero_point: 1 params
+- /decoder/Concat_1_output_0_scale: 1 params
+- /decoder/blocks.1/blocks.1.0/Conv_output_0_zero_point: 1 params
+- /decoder/blocks.1/blocks.1.0/Conv_output_0_scale: 1 params
+- decoder.blocks.1.0.weight_zero_point: 32 params
+- decoder.blocks.1.0.weight_scale: 32 params
+- /decoder/blocks.1/blocks.1.2/Relu_output_0_zero_point: 1 params
+- /decoder/blocks.1/blocks.1.2/Relu_output_0_scale: 1 params
+- /decoder/blocks.1/blocks.1.4/Conv_output_0_zero_point: 1 params
+- /decoder/blocks.1/blocks.1.4/Conv_output_0_scale: 1 params
+- decoder.blocks.1.4.weight_zero_point: 32 params
+- decoder.blocks.1.4.weight_scale: 32 params
+- /decoder/blocks.1/blocks.1.6/Relu_output_0_zero_point: 1 params
+- /decoder/blocks.1/blocks.1.6/Relu_output_0_scale: 1 params
+- /final_conv/final_conv.0/Conv_output_0_zero_point: 1 params
+- /final_conv/final_conv.0/Conv_output_0_scale: 1 params
+- final_conv.0.weight_zero_point: 32 params
+- final_conv.0.weight_scale: 32 params
+- /final_conv/final_conv.2/Relu_output_0_zero_point: 1 params
+- /final_conv/final_conv.2/Relu_output_0_scale: 1 params
+- /final_conv/final_conv.4/Conv_output_0_zero_point: 1 params
+- /final_conv/final_conv.4/Conv_output_0_scale: 1 params
+- final_conv.4.weight_zero_point: 32 params
+- final_conv.4.weight_scale: 32 params
+- /final_conv/final_conv.6/Relu_output_0_zero_point: 1 params
+- /final_conv/final_conv.6/Relu_output_0_scale: 1 params
+- output_zero_point: 1 params
+- output_scale: 1 params
+- final_conv.8.weight_zero_point: 4 params
+- final_conv.8.weight_scale: 4 params
+- input_ext_u8_scale: 1 params
+- input_ext_u8_zp: 1 params
