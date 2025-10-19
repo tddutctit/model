@@ -109,3 +109,48 @@ Total parameters: 156208
 
 [Estimated TOPS from Conv layers]: 1.231094 TOPS
 
+----
+
+driving:
+
+Bonus: Estimate TOPS (after fixing ReorderInput)
+
+Once inference works, we can add a rough TOPS estimator by:
+
+Counting FLOPs using onnxsim or onnxruntime-tools
+
+Timing inference with time.time() or time.perf_counter()
+
+Computing:
+
+TOPS
+=
+FLOPs
+Latency (s)
+/
+1
+𝑒
+12
+TOPS=
+Latency (s)
+FLOPs
+	​
+
+/1e12
+
+---
+
+
+python3 estimate_onnx_tops.py testmodel/20250922_fuse_unet_quantized_u8in_i8out_simplified.onnx
+Layer counts: {'DequantizeLinear': 35, 'QuantizeLinear': 35, 'Reshape': 1, 'Gather': 3, 'Resize': 3, 'Conv': 19, 'Relu': 18, 'MaxPool': 6, 'Concat': 3, 'ConvTranspose': 2}
+Estimated total MACs: 1,231,093,760,000
+Estimated total FLOPs: 2,462,187,520,000
+Approximate TOPS: 2.462
+Note: Actual runtime will differ based on hardware/parallelism/quantization/overheads.
+zengyu@3RTZCC4:/mnt/c/doc_wk/tmpxpu/model$ python3 estimate_onnx_tops.py testmodel/driving_vision_simplified.onnx
+Layer counts: {'Cast': 2, 'Concat': 2, 'Conv': 60, 'Mul': 128, 'Add': 61, 'Tanh': 19, 'ReduceMean': 1, 'Relu': 30, 'Sigmoid': 1, 'GlobalAveragePool': 1, 'Flatten': 1, 'Gemm': 36, 'ReduceSum': 1, 'Sqrt': 1, 'Clip': 1, 'Div': 1}
+Estimated total MACs: 14,694,875,136
+Estimated total FLOPs: 29,389,750,272
+Approximate TOPS: 0.029
+Note: Actual runtime will differ based on hardware/parallelism/quantization/overheads.
+
