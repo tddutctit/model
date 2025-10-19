@@ -1,0 +1,91 @@
+{
+  "model_path": "driving_policy.onnx",
+  "inputs": [
+    {
+      "name": "desire",
+      "shape": [
+        1,
+        25,
+        8
+      ]
+    },
+    {
+      "name": "traffic_convention",
+      "shape": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "lateral_control_params",
+      "shape": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "prev_desired_curv",
+      "shape": [
+        1,
+        25,
+        1
+      ]
+    },
+    {
+      "name": "features_buffer",
+      "shape": [
+        1,
+        25,
+        512
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "outputs",
+      "shape": [
+        1,
+        5884
+      ]
+    }
+  ],
+  "layer_type_summary": {
+    "Constant": 18,
+    "Gather": 2,
+    "Reshape": 3,
+    "Concat": 4,
+    "Gemm": 47,
+    "Relu": 39,
+    "Unsqueeze": 1,
+    "MatMul": 7,
+    "Add": 26,
+    "ReduceMean": 4,
+    "Sub": 2,
+    "Pow": 2,
+    "Sqrt": 2,
+    "Div": 2,
+    "Mul": 5,
+    "Transpose": 3,
+    "Split": 1,
+    "Squeeze": 3,
+    "Softmax": 1,
+    "Elu": 1,
+    "ReduceSum": 1
+  },
+  "parameter_summary": {
+    "total_params": 7959724,
+    "top_parameters": {
+      "pad": 2,
+      "policy_model.temporal_summarizer._extra_in.0.weight": 103424,
+      "policy_model.temporal_summarizer._extra_in.0.bias": 512,
+      "policy_model.temporal_summarizer._encode.0.bias": 512,
+      "policy_model.temporal_summarizer.transformer.0.attn.layer_norm.weight": 512,
+      "policy_model.temporal_summarizer.transformer.0.attn.layer_norm.bias": 512,
+      "policy_model.temporal_summarizer.transformer.0.attn.c_attn.bias": 1536,
+      "policy_model.temporal_summarizer.transformer.0.attn.c_proj.bias": 512,
+      "policy_model.temporal_summarizer.transformer.0.mlp.layer_norm.weight": 512,
+      "policy_model.temporal_summarizer.transformer.0.mlp.layer_norm.bias": 512
+    }
+  },
+  "tops_estimate": 0.0
+}

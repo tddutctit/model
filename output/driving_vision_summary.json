@@ -1,0 +1,67 @@
+{
+  "model_path": "driving_vision.onnx",
+  "inputs": [
+    {
+      "name": "input_imgs",
+      "shape": [
+        1,
+        12,
+        128,
+        256
+      ]
+    },
+    {
+      "name": "big_input_imgs",
+      "shape": [
+        1,
+        12,
+        128,
+        256
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "outputs",
+      "shape": [
+        1,
+        632
+      ]
+    }
+  ],
+  "layer_type_summary": {
+    "Cast": 2,
+    "Concat": 2,
+    "Conv": 60,
+    "Mul": 128,
+    "Constant": 78,
+    "Add": 61,
+    "Tanh": 19,
+    "ReduceMean": 1,
+    "Relu": 30,
+    "Sigmoid": 1,
+    "GlobalAveragePool": 1,
+    "Flatten": 2,
+    "Gemm": 36,
+    "ReduceSum": 1,
+    "Sqrt": 1,
+    "Clip": 1,
+    "Div": 1
+  },
+  "parameter_summary": {
+    "total_params": 17374584,
+    "top_parameters": {
+      "pad": 3,
+      "vision_model.vision._en.stem.0.reparam_conv.weight": 13824,
+      "vision_model.vision._en.stem.0.reparam_conv.bias": 64,
+      "vision_model.vision._en.stem.1.reparam_conv.weight": 576,
+      "vision_model.vision._en.stem.1.reparam_conv.bias": 64,
+      "vision_model.vision._en.stem.2.reparam_conv.weight": 4096,
+      "vision_model.vision._en.stem.2.reparam_conv.bias": 64,
+      "vision_model.vision._en.stages.0.blocks.0.token_mixer.reparam_conv.weight": 576,
+      "vision_model.vision._en.stages.0.blocks.0.token_mixer.reparam_conv.bias": 64,
+      "vision_model.vision._en.stages.0.blocks.0.mlp.fc1.weight": 12288
+    }
+  },
+  "tops_estimate": 0.0
+}
