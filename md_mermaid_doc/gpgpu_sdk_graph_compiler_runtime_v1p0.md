@@ -1,7 +1,7 @@
 # HNNBrain Graph Runtime & Compiler Design Document  
 **Version 1.0 — Technical Specification**  
 **Author:** Rain + ChatGPT  
-**Date:** 2025-xx-xx  
+**Date:** 2025-09-01  
 **Abbr:** hnn - hnet neutral network
 
 ---
@@ -438,7 +438,7 @@ Automatically run full QA suite.
 | graph_device.h | Device scheduler + driver |
 | graph_file.h | Serialization helper |
 | graph.hpp / graph.cpp | C++ abstraction |
-| A24standalonehnntest.cpp | Multi-device stress test |
+| H24standalonehnntest.cpp | Multi-device stress test |
 
 ---
 
