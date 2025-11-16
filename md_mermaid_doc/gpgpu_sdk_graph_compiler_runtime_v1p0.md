@@ -7,21 +7,21 @@
 ---
 
 # Table of Contents
-1. Overview  
-2. End-to-End Architecture  
-3. Graph.bin Specification  
-4. Runtime Architecture  
-5. Compiler Architecture  
-6. Operator Mapping Strategy  
-7. Quantization Architecture  
-8. Memory Planning  
-9. Execution Flow (Runtime)  
-10. Multi-Device Scheduling  
-11. Accuracy & Functional Verification Framework  
-12. Stress Test & Regression Test  
-13. Tools & QA Scripts  
-14. Future Extensions  
-15. Appendix  
+- [1. Overview](#1-overview)
+- [2. End-to-End Architecture](#2-end-to-end-architecture)
+- [3. Graphbin-hnn-file-specification](#3-graphbin-hnn-file-specification)
+- [4. Runtime Architecture](#4-runtime-architecture)
+- [5. Compiler Architecture](#5-compiler-architecture)
+- [6. Operator Mapping Strategy](#6-operator-mapping-strategy)
+- [7. Quantization Architecture](#7-quantization-architecture)
+- [8. Memory Planning](#8-memory-planning)
+- [9. Execution Flow (Runtime)](#9-execution-flow-runtime)
+- [10. Multi-Device Scheduling](#10-multi-device-scheduling)
+- [11. Accuracy & Functional Verification Framework](#11-accuracy--functional-verification-framework)
+- [12. Stress Test & Regression Test](#12-stress-test--regression-test)
+- [13. Tools & QA Scripts](#13-tools--qa-scripts)
+- [14. Future Extensions](#14-future-extensions)
+- [15. Appendix](#15-appendix)
 
 ---
 
