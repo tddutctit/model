@@ -43,22 +43,23 @@ This design follows industry ML compiler best practices (TensorRT, Vitis-AI, SNP
 ```mermaid
 graph TD
 
-    ONNX[ONNX Model (.onnx)]
+    ONNX[ONNX Model onnx ]
         --> P0[Parser & Shape Inference]
         --> P1[Graph IR]
-        --> P2[Graph Optimizations\n(fuse, fold, eliminate)]
-        --> P3[Quantization (INT8/BF16/FP16)]
-        --> P4[Lowering\n(OP → HW Kernel)]
+        --> P2[Graph Optimizations - fuse, fold, eliminate]
+        --> P3[Quantization - INT8/BF16/FP16 ]
+        --> P4[Lowering - OP → HW Kernel]
         --> P5[Memory Planning]
         --> P6[Graph.bin / Graph.rpp]
 
-    P6 --> L0[libgraph_loader.so\nGraph Loader]
+        P6 --> L0[libgraph_loader.so - Graph Loader]
         --> R0[rppRun_t Runtime Context]
-        --> A0[graph_agent\nOperator Dispatcher]
-        --> D0[graph_device.h\nDevice HAL]
-        --> C0[libcfwgraphs.so\nHW Kernel Backend]
+        --> A0[graph_agent / Operator Dispatcher]
+        --> D0[graph_device.h  / Device HAL]
+        --> C0[libcfwgraphs.so / HW Kernel Backend]
         --> HW[FPGA / NPU / GPU]
 ```
+
 
 ---
 
