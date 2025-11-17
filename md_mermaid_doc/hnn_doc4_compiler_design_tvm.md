@@ -2,7 +2,7 @@
 
 
 
-Conversion time: 0.842 seconds.
+Conversion time: 0.933 seconds.
 
 
 Using this Markdown file:
@@ -15,12 +15,12 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs™ to Markdown version 1.0β45
-* Sun Nov 16 2025 10:57:08 GMT-0800 (PST)
-* Source doc: How to make sure the deployment is working correctly
+* Sun Nov 16 2025 16:17:37 GMT-0800 (PST)
+* Source doc: Compiler design
 * Tables are currently converted to HTML tables.
 
 WARNING:
-You have 10 H1 headings. You may want to use the "H1 -> H2" option to demote all headings by one level.
+You have 11 H1 headings. You may want to use the "H1 -> H2" option to demote all headings by one level.
 
 ----->
 
@@ -32,61 +32,64 @@ You have 10 H1 headings. You may want to use the "H1 -> H2" option to demote all
 <p style="color: red; font-weight: bold">>>>>> PLEASE check and correct alert issues and delete this message and the inline alerts.<hr></p>
 
 
-**How to make sure the deployment is working correctly?**
+Compiler design
 
-**问得非常关键**
+for this compiler design, do you think that the custom gpgpu CAN use some open source compiler , like TVM, PLS check and update the desing if use them
 
-**ONNX → Graph.bin → Graph Runtime Execution（FPGA/GPU/NPU） \
-** 整个流程里最重要的就是： \
- ✔ **功能是否对齐？**（每个 ONNX OP 是否等价？） \
- ✔ **精度是否保持？**（量化后是否接近原模型？） \
- ✔ **编译器是否保证图优化不破坏原语义？**
 
-下面我给你 **完整、专业级** 解释。
+###### **ChatGPT said:**
+
+Absolutely **YES** — and not only feasible, but **recommended** — a custom GPGPU (or NPU/FPGA accelerator) *should* leverage an existing open-source compiler stack such as **Apache TVM**, MLIR, Glow, IREE, etc. \
+ This can **dramatically reduce development time**, improve stability, and give you “for free”:
+
+
+
+* ONNX importer \
+
+* Graph optimizer \
+
+* Quantization toolkit \
+
+* Auto-scheduler / cost model \
+
+* Hardware-aware scheduling \
+
+* Codegen template system \
+
+* Testing infrastructure \
+
 
 
 ---
 
 
-# **✅ 1. 你理解的流程是不是正确？**
+# **✅ Updated Compiler Design (with TVM integrated into AzureEngine Graph Runtime Flow)**
+
+Below is the updated design showing **where TVM fits**, and what components you can reuse vs extend.
 
 
-### **✔ 完全正确！流程如下：**
+---
 
 
-```
-ONNX → 自定义编译器 → graph.bin (graph.rpp) → load → graph runtime → FPGA/NPU/GPU execute
-```
-
-
-
-### **详细步骤：**
+# **🔥 1. Updated End-to-End Architecture (with TVM)**
 
 
 ```
-ONNX
-  ↓
-Parser
-  ↓
-Graph IR（内部表示）
-  ↓
-Operator Lowering（把复杂算子拆成硬件可执行 OP）
-  ↓
-Graph Optimization（融合、折叠、常量传播）
-  ↓
-Quantization（INT8/BF16/FP16）
-  ↓
-Memory Planning（tensor 分配）
-  ↓
-Codegen（生成图结构 + kernel 调度信息）
-  ↓
-graph.bin / graph.rpp
-  ↓
-libgraph_loader.so → graph_run
-  ↓
-libcfwgraphs.so → device hal
-  ↓
-FPGA/NPU 执行
+graph TD
+
+    ONNX[ONNX Model] --> TVM_Frontend[TVM Frontend\n ONNX → Relay IR]
+
+    TVM_Frontend --> TVM_Optimize[Relay Optimizations\n(fuse, fold, simplify)]
+    TVM_Optimize --> TVM_QAT[TVM Quantization\n(INT8/BF16)]
+
+    TVM_QAT --> TVM_Lower[Relay → TIR Lowering]
+    TVM_Lower --> TVM_Schedule[AutoScheduler / MetaSchedule]
+    TVM_Schedule --> TVM_Codegen[Custom Target Codegen\n(Your HW Backend)]
+    TVM_Codegen --> GraphBin[AzureEngine Graph.bin Export]
+
+    GraphBin --> RuntimeLoader[libgraph_loader.so]
+    RuntimeLoader --> RuntimeExec[rppRun_t Runtime]
+    RuntimeExec --> DeviceHW[Your GPGPU/NPU Hardware]
 
 
 ---
@@ -94,512 +97,532 @@ FPGA/NPU 执行
 
 
 
-# **✅ 2. 如何确保 “ONNX → graph.bin” 的 OP 功能完全匹配？**
-
-这是 AI 推理编译器的核心任务，所有公司都要做：
+# **🔥 2. Why TVM fits perfectly for your custom GPGPU**
 
 
-
-* NVIDIA TensorRT \
-
-* Qualcomm SNPE \
-
-* MediaTek NeuroPilot \
-
-* Google EdgeTPU \
-
-* Xilinx Vitis-AI \
-
-* OpenPilot SuperCombo Compiler \
-
-* AzureEngine（你用的这个） \
-
-
-
-## **有三个层级：**
-
-
----
-
-
-# **(A) OP Mapping（算子映射表）**
-
-编译器必须维护一个 mapping：
-
-
-```
-ONNX OP → Internal OP → Device Kernel/Instruction
-```
-
-
-例如：
+### **✔ TVM already solves the hardest parts of compiler design:**
 
 
 <table>
   <tr>
-   <td><strong>ONNX OP</strong>
+   <td><strong>Task</strong>
    </td>
-   <td><strong>Graph IR OP</strong>
+   <td><strong>TVM support</strong>
    </td>
-   <td><strong>硬件实现</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Conv
-   </td>
-   <td>conv2d
-   </td>
-   <td>FPGA conv kernel
+   <td><strong>Notes</strong>
    </td>
   </tr>
   <tr>
-   <td>MatMul
+   <td>ONNX, TF import
    </td>
-   <td>gemm
+   <td>✔
    </td>
-   <td>DSP GEMM Unit
-   </td>
-  </tr>
-  <tr>
-   <td>Add
-   </td>
-   <td>eltwise_add
-   </td>
-   <td>Vector ALU
+   <td>No need to write parser
    </td>
   </tr>
   <tr>
-   <td>ReLU
+   <td>Shape inference
    </td>
-   <td>relu
+   <td>✔
    </td>
-   <td>LUT / activation unit
+   <td>Stable & tested
    </td>
   </tr>
   <tr>
-   <td>Resize
+   <td>Graph optimization
    </td>
-   <td>resize
+   <td>✔
    </td>
-   <td>Custom resize kernel
+   <td>Fusion, elimination, simplify
+   </td>
+  </tr>
+  <tr>
+   <td>Quantization
+   </td>
+   <td>✔
+   </td>
+   <td>KL calibration, QAT
+   </td>
+  </tr>
+  <tr>
+   <td>Mixed-precision
+   </td>
+   <td>✔
+   </td>
+   <td>FP16, BF16, INT8
+   </td>
+  </tr>
+  <tr>
+   <td>Auto-scheduling
+   </td>
+   <td>✔
+   </td>
+   <td>Search-based tuning
+   </td>
+  </tr>
+  <tr>
+   <td>Hardware IR
+   </td>
+   <td>✔ TIR
+   </td>
+   <td>Typed tensor IR similar to MLIR
+   </td>
+  </tr>
+  <tr>
+   <td>Codegen
+   </td>
+   <td>✔ configurable
+   </td>
+   <td>You implement your accelerator backend
+   </td>
+  </tr>
+  <tr>
+   <td>Runtime
+   </td>
+   <td>Optional
+   </td>
+   <td>You use your own runtime; TVM only generates kernels
    </td>
   </tr>
 </table>
 
 
-这称为 **OP Compatibility Table**。
-
-
-### **如何确认 mapping 是正确的？**
-
-✔ 单 OP（op-by-op）测试 \
- ✔ ONNX test suite（官方提供） \
- ✔ 数学验证：逐元素比较 \
- ✔ Tolerance 设定（FP16/BF16/INT8）
+Your current Graph Runtime (libgraph_loader + rppRun) can remain **unchanged**, only the compiler (Graph.bin generator) becomes TVM-based.
 
 
 ---
 
 
-# **(B) 精度验证（Quantization-aware Validation）**
+# **🔥 3. Updated Compiler Architecture Using TVM**
 
-图转换后需要做：
-
-
-### **✔（1）精度对比：FP32 baseline vs graph.bin 量化版**
-
-流程：
-
-
-```
-Original ONNX FP32
-   ↓
-Run PyTorch / ONNXRuntime FP32 → 得到 baseline output
-
-Graph.bin (INT8/BF16)
-   ↓
-Run device → 得到 quantized output
-```
-
-
-然后比较：
-
-
-```
-max(abs(diff))
-mean(abs(diff))
-PSNR / SSIM（图像任务）
-top-1/top-5 accuracy（分类任务）
-IoU（语义分割）
-```
-
-
-常见阈值：
-
-
-
-* INT8：max error &lt; 1%-2% \
-
-* BF16/FP16：误差非常小，基本与 FP32 等价 \
-
+Below is the *revised* compiler architecture integrating TVM.
 
 
 ---
 
 
-# **(C) Graph-level correctness（整体模型验证）**
-
-包括：
+## **3.1 Frontend (Reuse TVM)**
 
 
+```
+ONNX → Relay IR (TVM's high-level IR)
+```
 
-* TOP-K accuracy 对比 \
 
-* mAP（检测） \
-
-* IoU（分割） \
-
-* Cosine similarity (embedding model) \
-
+No need to write any ONNX parser.
 
 
 ---
 
 
-# **3. 如何确保 “优化（fuse/constant fold）” 不破坏原语义？**
+## **3.2 Mid-Level Optimization (Reuse TVM)**
 
-编译器会有：
-
-
-### **✔ “Semantic-safe Optimization Rules（语义安全优化规则）”**
-
-例如：
-
-
-### **Conv + BN + ReLU 可以融合（合法）**
-
-
-```
-Conv → BatchNorm → ReLU
-   → fused_conv_bn_relu
-```
+TVM provides:
 
 
 
-### **但 Resize → Conv 不可随便交换顺序（非法）**
+* Fusion (Conv+BN+ReLU) \
 
-因为可能改变结果。
+* Constant folding \
+
+* Algebraic simplifications \
+
+* Dead code elimination \
+
+* Layout transformations \
+
+* Pattern rewriting \
 
 
-### **编译器使用两类保护：**
+Your compiler can *completely remove* that part — all handled by Relay.
 
 
 ---
 
 
-## **(1) Topology constraints（拓扑保护）**
+## **3.3 Quantization (Reuse TVM QNN)**
 
-即：
-
-
-```
-不能改变数据流
-不能改变依赖关系
-
-
----
-```
+Support:
 
 
 
-## **(2) Mathematical invariants（数学约束）**
+* Per-tensor / per-channel INT8 \
 
-例如：
+* BF16 conversion \
 
+* KL Divergence calibration \
 
-
-* a * b + c 是可融合的 \
-
-* Softmax 不可与 log-softmax 互相替换 \
-
-* LayerNorm 不可拆成 Conv-like 运算 \
-
-* GELU(x) ≠ x * sigmoid(x)（虽然近似） \
+* Quantization-aware training \
 
 
-编译器会维护：
-
-
-```
-Optimization rule set
-和
-禁止优化规则列表
-
-
----
-```
-
-
-
-# **4. 对 GPGPU / FPGA 如何确保行为一致？**
-
-你问的是 **"how to make sure both func and accuracy match on GPU?"**
-
-AzureEngine / Xilinx / TensorRT 都用同一套流程：
+TVM IR → Quantized Relay IR \
+ Your backend just needs to understand quantized ops.
 
 
 ---
 
 
-## **✔ Step 1. OP-level correctness test（算子级别正确性测试）**
+## **3.4 Lowering to TIR (Reuse TVM)**
 
-例如：
+Relay → TVM TIR (Tensor IR)
 
-
-```
-Conv2d_input_random
-→ ONNX -> GraphBin -> DeviceExec
-→ GPU: OnnxRuntime CUDA
-→ Compare output difference
-```
-
-
-要做：
+TIR is a low-level but structured IR, perfect for generating:
 
 
 
-* 1,000+ 随机测试输入 \
+* hardware kernel descriptors \
 
-* 动态 shape \
+* DMA copy instructions \
 
-* 边界情况（stride=1 vs 2, pad=0 vs valid vs same） \
+* thread/block schedules \
+
+* memory tile mappings \
 
 
 
 ---
 
 
-## **✔ Step 2. End-to-end validation（整个网络正确性）**
+## **3.5 Scheduling (partial reuse, partial custom)**
+
+Use:
 
 
 
-* ImageNet 测试集跑一遍比较 top-1/top-5 \
+* TVM MetaSchedule / AutoScheduler \
 
-* COCO 跑一遍 mAP \
-
-* Semantic segmentation 计算 mIoU \
+* Cost model tuned for your GPGPU/NPU \
 
 
-
----
-
-
-## **✔ Step 3. Calibration（量化校准）**
-
-对于 INT8：
-
-
-```
-校准数据集 → calibration → scale/zero-point → quant graph
-```
-
-
-确保 quantization error 最小。
-
-
----
-
-
-## **✔ Step 4. Hardware simulation（仿真）**
-
-FPGA/NPU/GPU 在真实部署前会跑：
+For your custom device:
 
 
 
-* RTL 仿真（Verilator/Vivado） \
-
-* C-model reference \
-
-* 指令级模拟器（ISA sim） \
-
-
-确保硬件 kernel 结果无误。
-
-
----
-
-
-## **✔ Step 5. Golden reference（官方基准）**
-
-保持一个 **Golden FP32 Reference**，每次编译器更新都重新验证：
-
-
-
-* 单算子误差 \
-
-* 整网误差 \
-
-* 性能提升/下降 \
-
-
-出现偏差要阻断发布。
-
-
----
-
-
-# **5. 你实际的系统中（AzureEngine Petalinux Graph Runtime）是怎么做的？**
-
-根据你上传的 runtime：
-
-
-```
-ONNX → Graph Compiler → graph.bin → graph_run → libcfwgraphs → FPGA
-```
-
-
-你需要确保编译器（不在你上传的 patch 中）做了：
-
-
-
-1. **OP Mapping Verification \
+* Implement your **tensor core tile rules \
 **
-2. **Quantization Calibration + Validation \
+* Define **memory hierarchy constraints \
 **
-3. **Graph Optimization Safety Check \
+* Define **warp size / SIMD width \
 **
-4. **模型级 golden comparison \
-**
-5. **设备 kernel 单元测试 \
-**
-6. **编译器版本兼容性检查 \
+* Define **scratchpad sizes \
 **
 
 
 ---
 
 
-# **6. 要保证“与原 ONNX 一致”，必须做的验证流程（建议你执行）**
+## **3.6 Codegen (Custom — You Implement)**
 
-下面是工业界部署模型的标准流程（NVIDIA / Tesla / Horizon Robotics / XPeng / DJI 都这样做）。
+**This is the core part you need to write.**
 
-
-### **✔ Step 1. ONNX → FP32 baseline runner (PyTorch or ORT)**
-
-得到 reference output：
+TVM calls your codegen backend similar to:
 
 
 ```
-baseline_out = onnxruntime(FP32)
+tvm.build(mod, target="azurengine")
 ```
 
 
-
-### **✔ Step 2. ONNX → Graph.bin → FPGA/GPU output**
-
-
-```
-device_out = graph_runtime(graph.bin)
-```
+Your backend will:
 
 
 
-### **✔ Step 3. 对比误差**
+1. Translate TIR to your kernel descriptors \
+
+2. Allocate memory buffers (DDR) \
+
+3. Create graph_entry list \
+
+4. Serialize into AzureEngine Graph.bin format \
 
 
-```
-diff = abs(device_out - baseline_out)
-print(max(diff), mean(diff))
-```
-
-
-
-### **✔ Step 4. End-to-end dataset test**
-
-例如：
+TVM gives you:
 
 
 
-* 分类任务 50k 图片 top-1 差距 &lt; 1% \
+* a complete graph of all kernels \
 
-* 检测任务 mAP 差距 &lt; 0.5% \
+* lowered kernel TIR \
 
-* 分割 IoU 差距 &lt; 0.5% \
+* buffer shapes \
 
+* fused operators \
 
+* quantization info \
 
-### **✔ Step 5. Randomized stress test**
+* scheduling metadata \
 
-随机生成 1000 次输入：
-
-
-```
-for i in range(1000):  
-    x = random_input()
-    assert close(gpu_out, fp32_out)
-```
-
-
-
-### **✔ Step 6. Regression test（每次编译器更新都要跑）**
 
 
 ---
 
 
-# **⭐最终回答总结（你问的问题）⭐**
+## **3.7 Graph.bin Exporter (You keep)**
 
-
-### **❓ONNX → graph.bin → runtime 执行，这样理解是否正确？**
-
-✔ **完全正确。**
-
-这是任何硬件推理平台必须做的模型转换流程。
-
-
----
-
-
-### **❓如何确保转换后的 graph.bin 与原 ONNX 功能、精度一致？**
-
-必须通过：
+The backend will output:
 
 
 
-1. **OP mapping correctness**（算子一一对应） \
+* kernel schedule list \
 
-2. **单 OP 精度测试 \
-**
-3. **全模型结果比对（FP32 vs Quant） \
-**
-4. **量化校准（INT8） \
-**
-5. **优化安全性检查（Fuse/ConstFold/Eliminate） \
-**
-6. **Golden Reference Regression Test \
-**
-7. **硬件 kernel 单元测试 \
-**
+* buffer assignments \
+
+* weights \
+
+* tensor metadata \
+
+* runtime-compatible graph structures \
+
+
+Fully matched with AzureEngine runtime.
 
 
 ---
 
 
-### **❓对于 GPGPU（或 FPGA/NPU）如何保证一致性？**
+# **🔥 4. Updated Runtime Integration**
 
-通过：
-
-
-
-* 算子精度验证 \
-
-* 图级语义验证 \
-
-* quantization 验证 \
-
-* kernel 仿真 \
-
-* 与 ONNXRuntime CUDA 对比 \
+Your existing runtime stays the same:
 
 
-可确保功能一致 + 精度可控。
+```
+graph.bin → libgraph_loader → rppRun → Device HAL
+```
+
+
+Because:
+
+
+
+* TVM generates **your kernels** (descriptor format) \
+
+* TVM generates **your memory layout \
+**
+* TVM exports **your graph.bin \
+**
+
+Runtime only executes what you provide.
+
+
+---
+
+
+# **🔥 5. Benefits of Using TVM for Your GPGPU**
+
+
+### **✔ Reduce compiler development time by 1–2 years**
+
+
+### **✔ Reliability from a mature ecosystem**
+
+
+### **✔ Immediate support for ONNX models**
+
+
+### **✔ Built-in quantization**
+
+
+### **✔ Auto scheduling → hardware performance maximized**
+
+
+### **✔ Easier debugging**
+
+
+### **✔ Better portability (maybe future NPU/IP reuse)**
+
+
+### **✔ Reusing TIR reduces custom DSL work**
+
+
+---
+
+
+# **🔥 6. Updated Design Document Section (You Can Add This to the .md/.docx)**
+
+
+### **Section: TVM Integration for AzureEngine Compiler**
+
+
+```
+The AzureEngine compiler adopts Apache TVM as the core optimization
+and lowering framework. TVM is responsible for ONNX parsing,
+graph-level optimization, quantization, and Relay→TIR lowering.
+
+A custom backend ("target=azurengine") is implemented to translate
+TIR schedules into hardware kernel descriptors and Graph.bin layout.
+
+The AzureEngine Graph Runtime remains unchanged. TVM only provides
+compile-time artifacts (Graph.bin).
+
+
+---
+```
+
+
+
+# **🔥 7. What you need to implement**
+
+
+### **You DO NOT need to implement:**
+
+❌ ONNX parser \
+ ❌ Shape inference \
+ ❌ Fusion rules \
+ ❌ Quantization algorithms \
+ ❌ Scheduling search engine \
+ ❌ Python front-end APIs
+
+
+### **You ONLY implement:**
+
+✔ A TVM backend (`Target: azurengine`) \
+ ✔ TIR → Kernel Descriptor Translator \
+ ✔ Memory planner (optional custom) \
+ ✔ Graph.bin serializer
+
+This is ~5k–10k lines of C++/Python code, not 100k lines.
+
+
+---
+
+
+# **🔥 8. Direct Comparison: No TVM vs TVM**
+
+
+<table>
+  <tr>
+   <td><strong>Feature</strong>
+   </td>
+   <td><strong>No TVM (Your own compiler)</strong>
+   </td>
+   <td><strong>Using TVM</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>ONNX import
+   </td>
+   <td>Must implement
+   </td>
+   <td>Provided
+   </td>
+  </tr>
+  <tr>
+   <td>Graph optimizer
+   </td>
+   <td>Must implement
+   </td>
+   <td>Provided
+   </td>
+  </tr>
+  <tr>
+   <td>Quantization
+   </td>
+   <td>Must implement
+   </td>
+   <td>Provided
+   </td>
+  </tr>
+  <tr>
+   <td>Auto scheduler
+   </td>
+   <td>Hard
+   </td>
+   <td>Provided
+   </td>
+  </tr>
+  <tr>
+   <td>IR design
+   </td>
+   <td>Must implement
+   </td>
+   <td>Provided (Relay + TIR)
+   </td>
+  </tr>
+  <tr>
+   <td>Codegen backend
+   </td>
+   <td>You must write
+   </td>
+   <td>You must write
+   </td>
+  </tr>
+  <tr>
+   <td>Graph.bin
+   </td>
+   <td>Already exists
+   </td>
+   <td>Reuse
+   </td>
+  </tr>
+  <tr>
+   <td>Dev time
+   </td>
+   <td>1–2 years
+   </td>
+   <td>2–3 months
+   </td>
+  </tr>
+  <tr>
+   <td>Stability
+   </td>
+   <td>Lower
+   </td>
+   <td>High
+   </td>
+  </tr>
+  <tr>
+   <td>Community
+   </td>
+   <td>None
+   </td>
+   <td>Large community
+   </td>
+  </tr>
+</table>
+
+
+
+---
+
+
+# **🔥 Conclusion — YES, you SHOULD use TVM**
+
+Using TVM for the AzureEngine GPGPU/GPGPU-like accelerator compiler is:
+
+✔ technically correct \
+ ✔ strategically beneficial \
+ ✔ industry-aligned \
+ ✔ dramatically faster \
+ ✔ compatible with your existing runtime
+
+
+---
+
+
+# **❗ Next Steps I Can Do For You**
+
+I can now generate the following:
+
+
+### **✅ 1. Updated formal design doc (MD + DOCX) including the full TVM integration**
+
+
+### **✅ 2. Provide exact code structure for the TVM backend**
+
+
+### **✅ 3. Provide sample “azurengine_codegen.cc”**
+
+
+### **✅ 4. Provide sample “register_target.py”**
+
+
+### **✅ 5. Provide how TVM JSON/runtime fits into your Graph.bin format**
+
+
+### **✅ 6. Provide performance tuning guide for your custom GPGPU**
+
+Just tell me:
+
+👉 **"Please update the full design doc with TVM integration" \
+** or \
+ 👉 **"Please generate the TVM backend code skeleton"**
