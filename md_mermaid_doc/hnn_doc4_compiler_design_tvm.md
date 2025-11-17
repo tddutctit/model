@@ -73,6 +73,8 @@ Below is the updated design showing **where TVM fits**, and what components you 
 
 # **🔥 1. Updated End-to-End Architecture (with TVM)**
 
+### to implement custom HW backend (to ask the RPP vendor for their compiler design)
+### to implment and customrRT in sdk
 
 ```mermaid
 graph TD
