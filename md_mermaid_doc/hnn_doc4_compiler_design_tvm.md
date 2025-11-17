@@ -92,7 +92,6 @@ graph TD
     RuntimeExec --> DeviceHW[Your GPGPU/NPU Hardware]
 
 
----
 ```
 
 
