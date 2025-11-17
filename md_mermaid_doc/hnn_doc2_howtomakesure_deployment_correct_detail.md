@@ -109,7 +109,6 @@ graph TD
         --> C0["libcfwgraphs.so\nHW Kernel / Scheduler"]
         --> HW["FPGA / NPU / GPU"]
 
----
 ```
 
 # **2️⃣ 2. 工业级 QA 流程（功能 + 精度验证）**
