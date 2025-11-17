@@ -74,7 +74,7 @@ Below is the updated design showing **where TVM fits**, and what components you 
 # **🔥 1. Updated End-to-End Architecture (with TVM)**
 
 
-```
+```mermaid
 graph TD
 
     ONNX[ONNX Model] --> TVM_Frontend[TVM Frontend\n ONNX → Relay IR]
