@@ -79,12 +79,12 @@ graph TD
 
     ONNX[ONNX Model] --> TVM_Frontend[TVM Frontend\n ONNX → Relay IR]
 
-    TVM_Frontend --> TVM_Optimize[Relay Optimizations\n(fuse, fold, simplify)]
-    TVM_Optimize --> TVM_QAT[TVM Quantization\n(INT8/BF16)]
+    TVM_Frontend --> TVM_Optimize["Relay Optimizations\n(fuse, fold, simplify)"]
+    TVM_Optimize --> TVM_QAT["TVM Quantization\n(INT8/BF16)"]
 
     TVM_QAT --> TVM_Lower[Relay → TIR Lowering]
     TVM_Lower --> TVM_Schedule[AutoScheduler / MetaSchedule]
-    TVM_Schedule --> TVM_Codegen[Custom Target Codegen\n(Your HW Backend)]
+    TVM_Schedule --> TVM_Codegen["Custom Target Codegen\n(Your HW Backend)"]
     TVM_Codegen --> GraphBin[AzureEngine Graph.bin Export]
 
     GraphBin --> RuntimeLoader[libgraph_loader.so]
