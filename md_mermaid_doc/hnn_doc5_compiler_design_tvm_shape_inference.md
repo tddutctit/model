@@ -180,6 +180,75 @@ CoutC_{out}Cout​
 
 ---
 
+# **📌 3. Example: Conv2D Shape Inference**
+
+Given an input tensor:
+
+\[
+X.shape = [N,\; C_{\text{in}},\; H_{\text{in}},\; W_{\text{in}}]
+\]
+
+Convolution parameters:
+
+- Kernel size:  
+  \[
+  k_H,\; k_W
+  \]
+- Padding:  
+  \[
+  p_H,\; p_W
+  \]
+- Stride:  
+  \[
+  s_H,\; s_W
+  \]
+- Dilation:  
+  \[
+  d_H,\; d_W
+  \]
+- Output channels:  
+  \[
+  C_{\text{out}}
+  \]
+
+---
+
+## **Height**
+\[
+H_{\text{out}} =
+\left\lfloor
+\frac{
+H_{\text{in}} + 2 p_H - d_H \cdot (k_H - 1) - 1
+}{
+s_H
+}
+\right\rfloor + 1
+\]
+
+## **Width**
+\[
+W_{\text{out}} =
+\left\lfloor
+\frac{
+W_{\text{in}} + 2 p_W - d_W \cdot (k_W - 1) - 1
+}{
+s_W
+}
+\right\rfloor + 1
+\]
+
+## **Channels**
+\[
+C_{\text{out}}
+\]
+
+---
+
+## **📌 Final Output Shape**
+\[
+Y.shape = [N,\; C_{\text{out}},\; H_{\text{out}},\; W_{\text{out}}]
+\]
+
 
 
 # **📌 4. Example: MatMul Shape Inference**
