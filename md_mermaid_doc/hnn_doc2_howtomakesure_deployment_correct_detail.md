@@ -90,30 +90,27 @@ pls do this one by one for all of them
 ## **1.1 顶层架构图**
 
 
-```
+```mermaid
 graph TD
 
-    ONNX[ONNX Model (.onnx)]
-        --> P0[ONNX Parser\n(Shape inference)]
-        --> P1[High-level IR\n(Graph IR)]
-        --> P2[Graph Optimization\n(fuse, fold, eliminate)]
-        --> P3[Quantization\n(INT8/BF16/FP16)]
-        --> P4[Lowering\n(ONNX OP → HW OP)]
-        --> P5[Memory Planning\n(Buffer Assignment)]
-        --> P6[Graph.bin / Graph.rpp\n(Serialized Executable)]
+    ONNX["ONNX Model (.onnx)"]
+        --> P0["ONNX Parser\n(Shape inference)"]
+        --> P1["High-level IR\n(Graph IR)"]
+        --> P2["Graph Optimization\n(fuse, fold, eliminate)"]
+        --> P3["Quantization\n(INT8/BF16/FP16)"]
+        --> P4["Lowering\n(ONNX OP → HW OP)"]
+        --> P5["Memory Planning\n(Buffer Assignment)"]
+        --> P6["Graph.bin / Graph.rpp\n(Serialized Executable)"]
 
-    P6 --> L0[libgraph_loader.so\n(Load graph.bin)]
-        --> R0[graph_run\nrppRun_t\nRuntime Context]
-        --> A0[graph_agent\nOperator Dispatcher]
-        --> D0[graph_device.h\nDevice HAL]
-        --> C0[libcfwgraphs.so\nHW Kernel / Scheduler]
-        --> HW[FPGA / NPU / GPU]
-
+    P6 --> L0["libgraph_loader.so\n(Load graph.bin)"]
+        --> R0["graph_run\nrppRun_t\nRuntime Context"]
+        --> A0["graph_agent\nOperator Dispatcher"]
+        --> D0["graph_device.h\nDevice HAL"]
+        --> C0["libcfwgraphs.so\nHW Kernel / Scheduler"]
+        --> HW["FPGA / NPU / GPU"]
 
 ---
 ```
-
-
 
 # **2️⃣ 2. 工业级 QA 流程（功能 + 精度验证）**
 
