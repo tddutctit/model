@@ -1,0 +1,11 @@
+SRAM Allocation Map (final addresses):
+  ACC              @ 0x00000000  size=4096
+  A0               @ 0x00001000  size=2048
+  A1               @ 0x00001800  size=2048
+  B0               @ 0x00002000  size=2048
+  B1               @ 0x00002800  size=2048
+  B_SCR            @ 0x00003000  size=2048
+  OUT              @ 0x00003800  size=1024
+  SK0              @ 0x00003C00  size=1024
+  SK1              @ 0x00004000  size=1024
+  BUMP used: 17408 / 262144

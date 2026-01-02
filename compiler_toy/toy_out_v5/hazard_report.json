@@ -1,0 +1,1221 @@
+{
+  "compute": {
+    "iters": [
+      {
+        "iter": 0,
+        "hazards": 14,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 3,
+            "pos": 3,
+            "later_idx": 3,
+            "earlier_idx": 2
+          }
+        ]
+      },
+      {
+        "iter": 1,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 25,
+            "pos": 4
+          }
+        ]
+      },
+      {
+        "iter": 2,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 25,
+            "pos": 5,
+            "later_idx": 5,
+            "earlier_idx": 4
+          }
+        ]
+      },
+      {
+        "iter": 3,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 26,
+            "pos": 6
+          }
+        ]
+      },
+      {
+        "iter": 4,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 26,
+            "pos": 7,
+            "later_idx": 7,
+            "earlier_idx": 6
+          }
+        ]
+      },
+      {
+        "iter": 5,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 27,
+            "pos": 8
+          }
+        ]
+      },
+      {
+        "iter": 6,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 27,
+            "pos": 9,
+            "later_idx": 9,
+            "earlier_idx": 8
+          }
+        ]
+      },
+      {
+        "iter": 7,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 28,
+            "pos": 10
+          }
+        ]
+      },
+      {
+        "iter": 8,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 28,
+            "pos": 11,
+            "later_idx": 11,
+            "earlier_idx": 10
+          }
+        ]
+      },
+      {
+        "iter": 9,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 29,
+            "pos": 12
+          }
+        ]
+      },
+      {
+        "iter": 10,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 29,
+            "pos": 13,
+            "later_idx": 13,
+            "earlier_idx": 12
+          }
+        ]
+      },
+      {
+        "iter": 11,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 30,
+            "pos": 14
+          }
+        ]
+      },
+      {
+        "iter": 12,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 30,
+            "pos": 15,
+            "later_idx": 15,
+            "earlier_idx": 14
+          }
+        ]
+      },
+      {
+        "iter": 13,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 31,
+            "pos": 16
+          }
+        ]
+      },
+      {
+        "iter": 14,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 31,
+            "pos": 17,
+            "later_idx": 17,
+            "earlier_idx": 16
+          }
+        ]
+      },
+      {
+        "iter": 15,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 32,
+            "pos": 18
+          }
+        ]
+      },
+      {
+        "iter": 16,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 32,
+            "pos": 19,
+            "later_idx": 19,
+            "earlier_idx": 18
+          }
+        ]
+      },
+      {
+        "iter": 17,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 33,
+            "pos": 20
+          }
+        ]
+      },
+      {
+        "iter": 18,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 33,
+            "pos": 21,
+            "later_idx": 21,
+            "earlier_idx": 20
+          }
+        ]
+      },
+      {
+        "iter": 19,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 34,
+            "pos": 22
+          }
+        ]
+      },
+      {
+        "iter": 20,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 34,
+            "pos": 23,
+            "later_idx": 23,
+            "earlier_idx": 22
+          }
+        ]
+      },
+      {
+        "iter": 21,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 35,
+            "pos": 24
+          }
+        ]
+      },
+      {
+        "iter": 22,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 35,
+            "pos": 25,
+            "later_idx": 25,
+            "earlier_idx": 24
+          }
+        ]
+      },
+      {
+        "iter": 23,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 36,
+            "pos": 26
+          }
+        ]
+      },
+      {
+        "iter": 24,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 36,
+            "pos": 27,
+            "later_idx": 27,
+            "earlier_idx": 26
+          }
+        ]
+      },
+      {
+        "iter": 25,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 37,
+            "pos": 28
+          }
+        ]
+      },
+      {
+        "iter": 26,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 37,
+            "pos": 29,
+            "later_idx": 29,
+            "earlier_idx": 28
+          }
+        ]
+      },
+      {
+        "iter": 27,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 38,
+            "pos": 30
+          }
+        ]
+      },
+      {
+        "iter": 28,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 38,
+            "pos": 31,
+            "later_idx": 31,
+            "earlier_idx": 30
+          }
+        ]
+      },
+      {
+        "iter": 29,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 39,
+            "pos": 32
+          }
+        ]
+      },
+      {
+        "iter": 30,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 39,
+            "pos": 33,
+            "later_idx": 33,
+            "earlier_idx": 32
+          }
+        ]
+      },
+      {
+        "iter": 31,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 40,
+            "pos": 34
+          }
+        ]
+      },
+      {
+        "iter": 32,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 40,
+            "pos": 35,
+            "later_idx": 35,
+            "earlier_idx": 34
+          }
+        ]
+      },
+      {
+        "iter": 33,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 41,
+            "pos": 36
+          }
+        ]
+      },
+      {
+        "iter": 34,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 41,
+            "pos": 37,
+            "later_idx": 37,
+            "earlier_idx": 36
+          }
+        ]
+      },
+      {
+        "iter": 35,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 42,
+            "pos": 38
+          }
+        ]
+      },
+      {
+        "iter": 36,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 42,
+            "pos": 39,
+            "later_idx": 39,
+            "earlier_idx": 38
+          }
+        ]
+      },
+      {
+        "iter": 37,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 43,
+            "pos": 40
+          }
+        ]
+      },
+      {
+        "iter": 38,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 43,
+            "pos": 41,
+            "later_idx": 41,
+            "earlier_idx": 40
+          }
+        ]
+      },
+      {
+        "iter": 39,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 44,
+            "pos": 42
+          }
+        ]
+      },
+      {
+        "iter": 40,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 44,
+            "pos": 43,
+            "later_idx": 43,
+            "earlier_idx": 42
+          }
+        ]
+      },
+      {
+        "iter": 41,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 45,
+            "pos": 44
+          }
+        ]
+      },
+      {
+        "iter": 42,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 45,
+            "pos": 45,
+            "later_idx": 45,
+            "earlier_idx": 44
+          }
+        ]
+      },
+      {
+        "iter": 43,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 46,
+            "pos": 46
+          }
+        ]
+      },
+      {
+        "iter": 44,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 46,
+            "pos": 47,
+            "later_idx": 47,
+            "earlier_idx": 46
+          }
+        ]
+      },
+      {
+        "iter": 45,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 47,
+            "pos": 48
+          }
+        ]
+      },
+      {
+        "iter": 46,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 47,
+            "pos": 49,
+            "later_idx": 49,
+            "earlier_idx": 48
+          }
+        ]
+      },
+      {
+        "iter": 47,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 48,
+            "pos": 50
+          }
+        ]
+      },
+      {
+        "iter": 48,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 48,
+            "pos": 51,
+            "later_idx": 51,
+            "earlier_idx": 50
+          }
+        ]
+      },
+      {
+        "iter": 49,
+        "hazards": 15,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 49,
+            "pos": 52
+          }
+        ]
+      }
+    ],
+    "final_hazards": 15
+  },
+  "bypass": {
+    "iters": [
+      {
+        "iter": 0,
+        "hazards": 0
+      }
+    ],
+    "final_hazards": 0
+  },
+  "prologue": {
+    "iters": [
+      {
+        "iter": 0,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 2,
+            "pos": 2,
+            "later_idx": 2,
+            "earlier_idx": 1
+          }
+        ]
+      },
+      {
+        "iter": 1,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 5,
+            "pos": 3
+          }
+        ]
+      },
+      {
+        "iter": 2,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 5,
+            "pos": 4,
+            "later_idx": 4,
+            "earlier_idx": 3
+          }
+        ]
+      },
+      {
+        "iter": 3,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 6,
+            "pos": 5
+          }
+        ]
+      },
+      {
+        "iter": 4,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 6,
+            "pos": 6,
+            "later_idx": 6,
+            "earlier_idx": 5
+          }
+        ]
+      },
+      {
+        "iter": 5,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 7,
+            "pos": 7
+          }
+        ]
+      },
+      {
+        "iter": 6,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 7,
+            "pos": 8,
+            "later_idx": 8,
+            "earlier_idx": 7
+          }
+        ]
+      },
+      {
+        "iter": 7,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 8,
+            "pos": 9
+          }
+        ]
+      },
+      {
+        "iter": 8,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 8,
+            "pos": 10,
+            "later_idx": 10,
+            "earlier_idx": 9
+          }
+        ]
+      },
+      {
+        "iter": 9,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 9,
+            "pos": 11
+          }
+        ]
+      },
+      {
+        "iter": 10,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 9,
+            "pos": 12,
+            "later_idx": 12,
+            "earlier_idx": 11
+          }
+        ]
+      },
+      {
+        "iter": 11,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 10,
+            "pos": 13
+          }
+        ]
+      },
+      {
+        "iter": 12,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 10,
+            "pos": 14,
+            "later_idx": 14,
+            "earlier_idx": 13
+          }
+        ]
+      },
+      {
+        "iter": 13,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 11,
+            "pos": 15
+          }
+        ]
+      },
+      {
+        "iter": 14,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 11,
+            "pos": 16,
+            "later_idx": 16,
+            "earlier_idx": 15
+          }
+        ]
+      },
+      {
+        "iter": 15,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 12,
+            "pos": 17
+          }
+        ]
+      },
+      {
+        "iter": 16,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 12,
+            "pos": 18,
+            "later_idx": 18,
+            "earlier_idx": 17
+          }
+        ]
+      },
+      {
+        "iter": 17,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 13,
+            "pos": 19
+          }
+        ]
+      },
+      {
+        "iter": 18,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 13,
+            "pos": 20,
+            "later_idx": 20,
+            "earlier_idx": 19
+          }
+        ]
+      },
+      {
+        "iter": 19,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 14,
+            "pos": 21
+          }
+        ]
+      },
+      {
+        "iter": 20,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 14,
+            "pos": 22,
+            "later_idx": 22,
+            "earlier_idx": 21
+          }
+        ]
+      },
+      {
+        "iter": 21,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 15,
+            "pos": 23
+          }
+        ]
+      },
+      {
+        "iter": 22,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 15,
+            "pos": 24,
+            "later_idx": 24,
+            "earlier_idx": 23
+          }
+        ]
+      },
+      {
+        "iter": 23,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 16,
+            "pos": 25
+          }
+        ]
+      },
+      {
+        "iter": 24,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 16,
+            "pos": 26,
+            "later_idx": 26,
+            "earlier_idx": 25
+          }
+        ]
+      },
+      {
+        "iter": 25,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 17,
+            "pos": 27
+          }
+        ]
+      },
+      {
+        "iter": 26,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 17,
+            "pos": 28,
+            "later_idx": 28,
+            "earlier_idx": 27
+          }
+        ]
+      },
+      {
+        "iter": 27,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 18,
+            "pos": 29
+          }
+        ]
+      },
+      {
+        "iter": 28,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 18,
+            "pos": 30,
+            "later_idx": 30,
+            "earlier_idx": 29
+          }
+        ]
+      },
+      {
+        "iter": 29,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 19,
+            "pos": 31
+          }
+        ]
+      },
+      {
+        "iter": 30,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 19,
+            "pos": 32,
+            "later_idx": 32,
+            "earlier_idx": 31
+          }
+        ]
+      },
+      {
+        "iter": 31,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 20,
+            "pos": 33
+          }
+        ]
+      },
+      {
+        "iter": 32,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 20,
+            "pos": 34,
+            "later_idx": 34,
+            "earlier_idx": 33
+          }
+        ]
+      },
+      {
+        "iter": 33,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 21,
+            "pos": 35
+          }
+        ]
+      },
+      {
+        "iter": 34,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 21,
+            "pos": 36,
+            "later_idx": 36,
+            "earlier_idx": 35
+          }
+        ]
+      },
+      {
+        "iter": 35,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 22,
+            "pos": 37
+          }
+        ]
+      },
+      {
+        "iter": 36,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 22,
+            "pos": 38,
+            "later_idx": 38,
+            "earlier_idx": 37
+          }
+        ]
+      },
+      {
+        "iter": 37,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 23,
+            "pos": 39
+          }
+        ]
+      },
+      {
+        "iter": 38,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 23,
+            "pos": 40,
+            "later_idx": 40,
+            "earlier_idx": 39
+          }
+        ]
+      },
+      {
+        "iter": 39,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 24,
+            "pos": 41
+          }
+        ]
+      },
+      {
+        "iter": 40,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 24,
+            "pos": 42,
+            "later_idx": 42,
+            "earlier_idx": 41
+          }
+        ]
+      },
+      {
+        "iter": 41,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 25,
+            "pos": 43
+          }
+        ]
+      },
+      {
+        "iter": 42,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 25,
+            "pos": 44,
+            "later_idx": 44,
+            "earlier_idx": 43
+          }
+        ]
+      },
+      {
+        "iter": 43,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 26,
+            "pos": 45
+          }
+        ]
+      },
+      {
+        "iter": 44,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 26,
+            "pos": 46,
+            "later_idx": 46,
+            "earlier_idx": 45
+          }
+        ]
+      },
+      {
+        "iter": 45,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 27,
+            "pos": 47
+          }
+        ]
+      },
+      {
+        "iter": 46,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 27,
+            "pos": 48,
+            "later_idx": 48,
+            "earlier_idx": 47
+          }
+        ]
+      },
+      {
+        "iter": 47,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 28,
+            "pos": 49
+          }
+        ]
+      },
+      {
+        "iter": 48,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "before_later_wait",
+            "wait": 28,
+            "pos": 50,
+            "later_idx": 50,
+            "earlier_idx": 49
+          }
+        ]
+      },
+      {
+        "iter": 49,
+        "hazards": 1,
+        "action": [
+          {
+            "type": "after_earlier_signal",
+            "event": 29,
+            "pos": 51
+          }
+        ]
+      }
+    ],
+    "final_hazards": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "phi_strategy": "firmware_select_path",
+  "optional_prologue": "prologue_packB.bin",
+  "paths": {
+    "if_c_true": "path_compute.bin",
+    "if_c_false": "path_bypass.bin"
+  },
+  "v4_changes": [
+    "events signal at command END (strict sim)",
+    "bank conflict hazard reporting",
+    "PACK_B lowered to DMA_LOAD_2D + PACK_B_TILE micro-kernel"
+  ]
+}

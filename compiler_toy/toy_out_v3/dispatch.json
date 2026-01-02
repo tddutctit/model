@@ -1,0 +1,13 @@
+{
+  "phi_strategy": "firmware_select_path",
+  "optional_prologue": "prologue_packB.bin",
+  "paths": {
+    "if_c_true": "path_compute.bin",
+    "if_c_false": "path_bypass.bin"
+  },
+  "notes": {
+    "compute": "tiled MatMul->RequantReLU(per-channel)->(optional)ResidualAdd->Store",
+    "bypass": "tiled Store(A)->Y",
+    "sram_alloc": "linear-scan liveness-based reuse allocator (toy)"
+  }
+}

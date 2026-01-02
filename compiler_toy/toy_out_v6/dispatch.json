@@ -1,0 +1,13 @@
+{
+  "phi_strategy": "firmware_select_path",
+  "optional_prologue": "prologue_fixed.bin",
+  "paths": {
+    "if_c_true": "compute_fixed.bin",
+    "if_c_false": "bypass_fixed.bin"
+  },
+  "v6_pipeline": [
+    "bank-aware allocation",
+    "dma hoist scheduling",
+    "barrier mitigation fallback"
+  ]
+}

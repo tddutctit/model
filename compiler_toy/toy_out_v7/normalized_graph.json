@@ -1,0 +1,116 @@
+{
+  "name": "if_matmul_requant_relu_residual",
+  "inputs": {
+    "A": {
+      "dtype": "i8",
+      "shape": [
+        64,
+        64
+      ]
+    },
+    "B": {
+      "dtype": "i8",
+      "shape": [
+        64,
+        64
+      ]
+    },
+    "Skip": {
+      "dtype": "i8",
+      "shape": [
+        64,
+        64
+      ]
+    },
+    "cond": {
+      "dtype": "bool",
+      "shape": []
+    }
+  },
+  "outputs": {
+    "Y": {
+      "dtype": "i8",
+      "shape": [
+        64,
+        64
+      ]
+    }
+  },
+  "if": {
+    "cond": "cond",
+    "then": [
+      {
+        "op": "PACK_B",
+        "inputs": [
+          "B"
+        ],
+        "outputs": [
+          "Bpack"
+        ],
+        "attrs": {
+          "tileN": 32
+        }
+      },
+      {
+        "op": "MATMUL",
+        "inputs": [
+          "A",
+          "Bpack"
+        ],
+        "outputs": [
+          "ACC"
+        ],
+        "attrs": {
+          "acc_dtype": "i32"
+        }
+      },
+      {
+        "op": "REQUANT_RELU_PC",
+        "inputs": [
+          "ACC"
+        ],
+        "outputs": [
+          "Oq"
+        ],
+        "attrs": {
+          "per_channel_axis": "N"
+        }
+      },
+      {
+        "op": "ADD_RESIDUAL",
+        "inputs": [
+          "Oq",
+          "Skip"
+        ],
+        "outputs": [
+          "Oadd"
+        ],
+        "attrs": {
+          "clamp_min": -128,
+          "clamp_max": 127,
+          "relu_min0": true
+        }
+      },
+      {
+        "op": "STORE",
+        "inputs": [
+          "Oadd"
+        ],
+        "outputs": [
+          "Y"
+        ]
+      }
+    ],
+    "else": [
+      {
+        "op": "STORE",
+        "inputs": [
+          "A"
+        ],
+        "outputs": [
+          "Y"
+        ]
+      }
+    ]
+  }
+}

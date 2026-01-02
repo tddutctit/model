@@ -1,0 +1,1461 @@
+{
+  "compute": {
+    "iters": [
+      {
+        "iter": 0,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 11,
+          "pos": 13
+        }
+      },
+      {
+        "iter": 1,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 25,
+          "pos": 14
+        }
+      },
+      {
+        "iter": 2,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 25,
+          "pos": 15
+        }
+      },
+      {
+        "iter": 3,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 26,
+          "pos": 16
+        }
+      },
+      {
+        "iter": 4,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 26,
+          "pos": 17
+        }
+      },
+      {
+        "iter": 5,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 27,
+          "pos": 18
+        }
+      },
+      {
+        "iter": 6,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 27,
+          "pos": 19
+        }
+      },
+      {
+        "iter": 7,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 28,
+          "pos": 20
+        }
+      },
+      {
+        "iter": 8,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 28,
+          "pos": 21
+        }
+      },
+      {
+        "iter": 9,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 29,
+          "pos": 22
+        }
+      },
+      {
+        "iter": 10,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 29,
+          "pos": 23
+        }
+      },
+      {
+        "iter": 11,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 30,
+          "pos": 24
+        }
+      },
+      {
+        "iter": 12,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 30,
+          "pos": 25
+        }
+      },
+      {
+        "iter": 13,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 31,
+          "pos": 26
+        }
+      },
+      {
+        "iter": 14,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 31,
+          "pos": 27
+        }
+      },
+      {
+        "iter": 15,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 32,
+          "pos": 28
+        }
+      },
+      {
+        "iter": 16,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 32,
+          "pos": 29
+        }
+      },
+      {
+        "iter": 17,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 33,
+          "pos": 30
+        }
+      },
+      {
+        "iter": 18,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 33,
+          "pos": 31
+        }
+      },
+      {
+        "iter": 19,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 34,
+          "pos": 32
+        }
+      },
+      {
+        "iter": 20,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 34,
+          "pos": 33
+        }
+      },
+      {
+        "iter": 21,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 35,
+          "pos": 34
+        }
+      },
+      {
+        "iter": 22,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 35,
+          "pos": 35
+        }
+      },
+      {
+        "iter": 23,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 36,
+          "pos": 36
+        }
+      },
+      {
+        "iter": 24,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 36,
+          "pos": 37
+        }
+      },
+      {
+        "iter": 25,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 37,
+          "pos": 38
+        }
+      },
+      {
+        "iter": 26,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 37,
+          "pos": 39
+        }
+      },
+      {
+        "iter": 27,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 38,
+          "pos": 40
+        }
+      },
+      {
+        "iter": 28,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 38,
+          "pos": 41
+        }
+      },
+      {
+        "iter": 29,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 39,
+          "pos": 42
+        }
+      },
+      {
+        "iter": 30,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 39,
+          "pos": 43
+        }
+      },
+      {
+        "iter": 31,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 40,
+          "pos": 44
+        }
+      },
+      {
+        "iter": 32,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 40,
+          "pos": 45
+        }
+      },
+      {
+        "iter": 33,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 41,
+          "pos": 46
+        }
+      },
+      {
+        "iter": 34,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 41,
+          "pos": 47
+        }
+      },
+      {
+        "iter": 35,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 42,
+          "pos": 48
+        }
+      },
+      {
+        "iter": 36,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 42,
+          "pos": 49
+        }
+      },
+      {
+        "iter": 37,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 43,
+          "pos": 50
+        }
+      },
+      {
+        "iter": 38,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 43,
+          "pos": 51
+        }
+      },
+      {
+        "iter": 39,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 44,
+          "pos": 52
+        }
+      },
+      {
+        "iter": 40,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 44,
+          "pos": 53
+        }
+      },
+      {
+        "iter": 41,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 45,
+          "pos": 54
+        }
+      },
+      {
+        "iter": 42,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 45,
+          "pos": 55
+        }
+      },
+      {
+        "iter": 43,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 46,
+          "pos": 56
+        }
+      },
+      {
+        "iter": 44,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 46,
+          "pos": 57
+        }
+      },
+      {
+        "iter": 45,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 47,
+          "pos": 58
+        }
+      },
+      {
+        "iter": 46,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 47,
+          "pos": 59
+        }
+      },
+      {
+        "iter": 47,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 48,
+          "pos": 60
+        }
+      },
+      {
+        "iter": 48,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 48,
+          "pos": 61
+        }
+      },
+      {
+        "iter": 49,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 49,
+          "pos": 62
+        }
+      },
+      {
+        "iter": 50,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 49,
+          "pos": 63
+        }
+      },
+      {
+        "iter": 51,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 50,
+          "pos": 64
+        }
+      },
+      {
+        "iter": 52,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 50,
+          "pos": 65
+        }
+      },
+      {
+        "iter": 53,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 51,
+          "pos": 66
+        }
+      },
+      {
+        "iter": 54,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 51,
+          "pos": 67
+        }
+      },
+      {
+        "iter": 55,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 52,
+          "pos": 68
+        }
+      },
+      {
+        "iter": 56,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 52,
+          "pos": 69
+        }
+      },
+      {
+        "iter": 57,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 53,
+          "pos": 70
+        }
+      },
+      {
+        "iter": 58,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 53,
+          "pos": 71
+        }
+      },
+      {
+        "iter": 59,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 54,
+          "pos": 72
+        }
+      },
+      {
+        "iter": 60,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 54,
+          "pos": 73
+        }
+      },
+      {
+        "iter": 61,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 55,
+          "pos": 74
+        }
+      },
+      {
+        "iter": 62,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 55,
+          "pos": 75
+        }
+      },
+      {
+        "iter": 63,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 56,
+          "pos": 76
+        }
+      },
+      {
+        "iter": 64,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 56,
+          "pos": 77
+        }
+      },
+      {
+        "iter": 65,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 57,
+          "pos": 78
+        }
+      },
+      {
+        "iter": 66,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 57,
+          "pos": 79
+        }
+      },
+      {
+        "iter": 67,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 58,
+          "pos": 80
+        }
+      },
+      {
+        "iter": 68,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 58,
+          "pos": 81
+        }
+      },
+      {
+        "iter": 69,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 59,
+          "pos": 82
+        }
+      },
+      {
+        "iter": 70,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 59,
+          "pos": 83
+        }
+      },
+      {
+        "iter": 71,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 60,
+          "pos": 84
+        }
+      },
+      {
+        "iter": 72,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 60,
+          "pos": 85
+        }
+      },
+      {
+        "iter": 73,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 61,
+          "pos": 86
+        }
+      },
+      {
+        "iter": 74,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 61,
+          "pos": 87
+        }
+      },
+      {
+        "iter": 75,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 62,
+          "pos": 88
+        }
+      },
+      {
+        "iter": 76,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 62,
+          "pos": 89
+        }
+      },
+      {
+        "iter": 77,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 63,
+          "pos": 90
+        }
+      },
+      {
+        "iter": 78,
+        "hazards": 3,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 63,
+          "pos": 91
+        }
+      },
+      {
+        "iter": 79,
+        "hazards": 3,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 64,
+          "pos": 92
+        }
+      }
+    ],
+    "final_hazards": 3
+  },
+  "bypass": {
+    "iters": [
+      {
+        "iter": 0,
+        "hazards": 0
+      }
+    ],
+    "final_hazards": 0
+  },
+  "prologue": {
+    "iters": [
+      {
+        "iter": 0,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 2,
+          "pos": 2
+        }
+      },
+      {
+        "iter": 1,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 5,
+          "pos": 3
+        }
+      },
+      {
+        "iter": 2,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 5,
+          "pos": 4
+        }
+      },
+      {
+        "iter": 3,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 6,
+          "pos": 5
+        }
+      },
+      {
+        "iter": 4,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 6,
+          "pos": 6
+        }
+      },
+      {
+        "iter": 5,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 7,
+          "pos": 7
+        }
+      },
+      {
+        "iter": 6,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 7,
+          "pos": 8
+        }
+      },
+      {
+        "iter": 7,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 8,
+          "pos": 9
+        }
+      },
+      {
+        "iter": 8,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 8,
+          "pos": 10
+        }
+      },
+      {
+        "iter": 9,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 9,
+          "pos": 11
+        }
+      },
+      {
+        "iter": 10,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 9,
+          "pos": 12
+        }
+      },
+      {
+        "iter": 11,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 10,
+          "pos": 13
+        }
+      },
+      {
+        "iter": 12,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 10,
+          "pos": 14
+        }
+      },
+      {
+        "iter": 13,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 11,
+          "pos": 15
+        }
+      },
+      {
+        "iter": 14,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 11,
+          "pos": 16
+        }
+      },
+      {
+        "iter": 15,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 12,
+          "pos": 17
+        }
+      },
+      {
+        "iter": 16,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 12,
+          "pos": 18
+        }
+      },
+      {
+        "iter": 17,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 13,
+          "pos": 19
+        }
+      },
+      {
+        "iter": 18,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 13,
+          "pos": 20
+        }
+      },
+      {
+        "iter": 19,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 14,
+          "pos": 21
+        }
+      },
+      {
+        "iter": 20,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 14,
+          "pos": 22
+        }
+      },
+      {
+        "iter": 21,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 15,
+          "pos": 23
+        }
+      },
+      {
+        "iter": 22,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 15,
+          "pos": 24
+        }
+      },
+      {
+        "iter": 23,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 16,
+          "pos": 25
+        }
+      },
+      {
+        "iter": 24,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 16,
+          "pos": 26
+        }
+      },
+      {
+        "iter": 25,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 17,
+          "pos": 27
+        }
+      },
+      {
+        "iter": 26,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 17,
+          "pos": 28
+        }
+      },
+      {
+        "iter": 27,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 18,
+          "pos": 29
+        }
+      },
+      {
+        "iter": 28,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 18,
+          "pos": 30
+        }
+      },
+      {
+        "iter": 29,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 19,
+          "pos": 31
+        }
+      },
+      {
+        "iter": 30,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 19,
+          "pos": 32
+        }
+      },
+      {
+        "iter": 31,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 20,
+          "pos": 33
+        }
+      },
+      {
+        "iter": 32,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 20,
+          "pos": 34
+        }
+      },
+      {
+        "iter": 33,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 21,
+          "pos": 35
+        }
+      },
+      {
+        "iter": 34,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 21,
+          "pos": 36
+        }
+      },
+      {
+        "iter": 35,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 22,
+          "pos": 37
+        }
+      },
+      {
+        "iter": 36,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 22,
+          "pos": 38
+        }
+      },
+      {
+        "iter": 37,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 23,
+          "pos": 39
+        }
+      },
+      {
+        "iter": 38,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 23,
+          "pos": 40
+        }
+      },
+      {
+        "iter": 39,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 24,
+          "pos": 41
+        }
+      },
+      {
+        "iter": 40,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 24,
+          "pos": 42
+        }
+      },
+      {
+        "iter": 41,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 25,
+          "pos": 43
+        }
+      },
+      {
+        "iter": 42,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 25,
+          "pos": 44
+        }
+      },
+      {
+        "iter": 43,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 26,
+          "pos": 45
+        }
+      },
+      {
+        "iter": 44,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 26,
+          "pos": 46
+        }
+      },
+      {
+        "iter": 45,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 27,
+          "pos": 47
+        }
+      },
+      {
+        "iter": 46,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 27,
+          "pos": 48
+        }
+      },
+      {
+        "iter": 47,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 28,
+          "pos": 49
+        }
+      },
+      {
+        "iter": 48,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 28,
+          "pos": 50
+        }
+      },
+      {
+        "iter": 49,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 29,
+          "pos": 51
+        }
+      },
+      {
+        "iter": 50,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 29,
+          "pos": 52
+        }
+      },
+      {
+        "iter": 51,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 30,
+          "pos": 53
+        }
+      },
+      {
+        "iter": 52,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 30,
+          "pos": 54
+        }
+      },
+      {
+        "iter": 53,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 31,
+          "pos": 55
+        }
+      },
+      {
+        "iter": 54,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 31,
+          "pos": 56
+        }
+      },
+      {
+        "iter": 55,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 32,
+          "pos": 57
+        }
+      },
+      {
+        "iter": 56,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 32,
+          "pos": 58
+        }
+      },
+      {
+        "iter": 57,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 33,
+          "pos": 59
+        }
+      },
+      {
+        "iter": 58,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 33,
+          "pos": 60
+        }
+      },
+      {
+        "iter": 59,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 34,
+          "pos": 61
+        }
+      },
+      {
+        "iter": 60,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 34,
+          "pos": 62
+        }
+      },
+      {
+        "iter": 61,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 35,
+          "pos": 63
+        }
+      },
+      {
+        "iter": 62,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 35,
+          "pos": 64
+        }
+      },
+      {
+        "iter": 63,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 36,
+          "pos": 65
+        }
+      },
+      {
+        "iter": 64,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 36,
+          "pos": 66
+        }
+      },
+      {
+        "iter": 65,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 37,
+          "pos": 67
+        }
+      },
+      {
+        "iter": 66,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 37,
+          "pos": 68
+        }
+      },
+      {
+        "iter": 67,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 38,
+          "pos": 69
+        }
+      },
+      {
+        "iter": 68,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 38,
+          "pos": 70
+        }
+      },
+      {
+        "iter": 69,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 39,
+          "pos": 71
+        }
+      },
+      {
+        "iter": 70,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 39,
+          "pos": 72
+        }
+      },
+      {
+        "iter": 71,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 40,
+          "pos": 73
+        }
+      },
+      {
+        "iter": 72,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 40,
+          "pos": 74
+        }
+      },
+      {
+        "iter": 73,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 41,
+          "pos": 75
+        }
+      },
+      {
+        "iter": 74,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 41,
+          "pos": 76
+        }
+      },
+      {
+        "iter": 75,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 42,
+          "pos": 77
+        }
+      },
+      {
+        "iter": 76,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 42,
+          "pos": 78
+        }
+      },
+      {
+        "iter": 77,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 43,
+          "pos": 79
+        }
+      },
+      {
+        "iter": 78,
+        "hazards": 1,
+        "action": {
+          "type": "insert_before_later_wait",
+          "wait": 43,
+          "pos": 80
+        }
+      },
+      {
+        "iter": 79,
+        "hazards": 1,
+        "action": {
+          "type": "insert_after_earlier_signal",
+          "event": 44,
+          "pos": 81
+        }
+      }
+    ],
+    "final_hazards": 1
+  }
+}

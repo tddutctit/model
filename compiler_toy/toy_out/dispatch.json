@@ -1,0 +1,8 @@
+{
+  "phi_strategy": "firmware_select_path",
+  "paths": {
+    "if_c_true": "path_compute.bin",
+    "if_c_false": "path_bypass.bin"
+  },
+  "optional_prologue": "prologue_packB.bin"
+}

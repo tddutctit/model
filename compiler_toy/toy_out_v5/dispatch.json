@@ -1,0 +1,13 @@
+{
+  "phi_strategy": "firmware_select_path",
+  "optional_prologue": "prologue_packB_fixed.bin",
+  "paths": {
+    "if_c_true": "path_compute_fixed.bin",
+    "if_c_false": "path_bypass_fixed.bin"
+  },
+  "v5_changes": [
+    "accurate overlap interval tracking",
+    "bank hazard mitigation (barrier insertion; limited reorder)",
+    "raw vs fixed bundles emitted"
+  ]
+}

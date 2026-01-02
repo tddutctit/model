@@ -1,0 +1,10 @@
+SRAM Allocation Map:
+  A0         @ 0x00000000  size=2048
+  A1         @ 0x00000800  size=2048
+  B0         @ 0x00001000  size=2048
+  B1         @ 0x00001800  size=2048
+  SK0        @ 0x00002000  size=1024
+  SK1        @ 0x00002400  size=1024
+  ACC        @ 0x00002800  size=4096
+  OUT        @ 0x00003800  size=1024
+  TOTAL used: 15360 / 262144
